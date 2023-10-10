@@ -1,0 +1,80 @@
+id: '16967448319320.7722993826655036'
+name: requestMaps
+nameConfigured: true
+steps:
+  - id: '16967448342070.4135935093567078'
+    type: httpRequest
+    name: request
+    params:
+      - type: datasourceId
+        value: httpApi
+        valueType: string
+        mustSelectFirst: true
+      - type: method
+        value: GET
+        valueType: string
+      - type: url
+        value: https://maps.googleapis.com/maps/api/geocode/json
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: headers
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+        interpolationType: string
+      - type: queryParams
+        value:
+          - name: address
+            value: >-
+              "{{state.filterdata.address}},{{state.filterdata.areaname}},{{state.filterdata.districtname}},{{state.filterdata.countryname}}"
+          - name: key
+            value: AIzaSyDOwdilGScI4cMc0oR2ZMMj3lQBfHIo4rg
+        valueType: custom
+        interpolationType: string
+      - type: body
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: structuredBody
+        value: []
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: bodyType
+        value: raw
+        valueType: string
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: true
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '16967363346630.07488220613504293'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.requestMaps.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.requestMaps.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.requestMaps.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+index: 6

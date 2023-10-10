@@ -1,0 +1,15 @@
+id: '16965949283610.12827388619169855'
+definitionId: tab
+styles: {}
+properties:
+  name: tab2
+  title: Mẫu ví dụ 2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '16965949283610.7480425142069362'
+index: 1
+slots:
+  - id: '16965949283610.26321203389156844'
+    name: content
+    children: []

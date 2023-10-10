@@ -1,0 +1,18 @@
+storeItemList:
+  - id: '16967417967810.8748230808963213'
+    name: filterdata
+    value: {}
+    valueType: object
+    initialValue: {}
+    version: 1
+metadata:
+  favicon: ''
+  code: ''
+  title: Hubs VN App
+  description: ''
+appSettings:
+  properties:
+    defaultData: '{}'
+  actions: {}
+  gridVersion: 2
+internalType: project

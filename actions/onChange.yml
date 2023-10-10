@@ -1,0 +1,41 @@
+id: '16967421499530.2639369623895702'
+name: onChange
+nameConfigured: true
+steps:
+  - id: '16967421545000.6851741187925708'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '16967417967810.8748230808963213'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: true
+mode: manual
+modeConfigured: true
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.onChange.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.onChange.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.onChange.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: true
+index: 4

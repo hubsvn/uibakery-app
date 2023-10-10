@@ -1,0 +1,67 @@
+id: '16969254412270.07547908692964866'
+definitionId: metric
+parentSlotId: '16969254412260.0052238495901468784'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 4
+      h: 34
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 40
+properties:
+  data: '{{}}'
+  name: metric3
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Metric
+  operation: count
+  groupType: not_group
+  showLoading:
+    withData: false
+    dataValue: 'false'
+    value: false
+actions: {}
+index: 0
+slots:
+  - id: '16969254412270.3633445519047118'
+    name: metricField
+    children:
+      - id: '16969254412270.42442337202585234'
+        definitionId: atomicNumber
+        styles: {}
+        properties:
+          name: atomicNumber4
+          prop: id
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16969254412270.3633445519047118'
+        index: 0
+        slots: []
+  - id: '16969254412270.23099535212551192'
+    name: additionalField
+    children:
+      - id: '16969254412270.7250621790850107'
+        definitionId: atomicString
+        styles: {}
+        properties:
+          name: atomicString21
+          prop: full_name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16969254412270.23099535212551192'
+        index: 1
+        slots: []
+  - id: '16969254412270.6229404180186435'
+    name: groupByField
+    children: []

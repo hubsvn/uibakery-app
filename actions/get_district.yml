@@ -1,0 +1,118 @@
+id: '16967066328950.6238582120995999'
+name: get_district
+nameConfigured: true
+steps:
+  - id: '16967066328950.46927490780106806'
+    type: customSQLQuery
+    name: get_region
+    params:
+      - type: query
+        value: >
+          SELECT 
+
+          gcmsbase_district_tab.region_id,
+
+          gcmsbase_region_tab.regionname ,
+
+          gcmsbase_district_tab.id as districtid,
+
+          gcmsbase_district_tab.districtname,
+
+          gcmsbase_area_tab.id as area_id,
+
+          gcmsbase_area_tab.areaname
+
+          FROM gcmsbase_area_tab
+
+          left join gcmsbase_district_tab on gcmsbase_district_tab.id = 
+          gcmsbase_area_tab.district_id
+
+          left join gcmsbase_region_tab on gcmsbase_region_tab.id = 
+          gcmsbase_area_tab.region_id
+
+          where ( gcmsbase_area_tab.region_id = {{ui.select2.value ||
+          activeRoute.queryParams.regionid}} or gcmsbase_area_tab.country_id =
+          {{ui.select.value || activeRoute.queryParams.countryid}})
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: GCMS-SING-VIAProxy
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: >
+          SELECT 
+
+          gcmsbase_district_tab.region_id,
+
+          gcmsbase_region_tab.regionname ,
+
+          gcmsbase_district_tab.id as districtid,
+
+          gcmsbase_district_tab.districtname,
+
+          gcmsbase_area_tab.id as area_id,
+
+          gcmsbase_area_tab.areaname
+
+          FROM gcmsbase_area_tab
+
+          left join gcmsbase_district_tab on gcmsbase_district_tab.id = 
+          gcmsbase_area_tab.district_id
+
+          left join gcmsbase_region_tab on gcmsbase_region_tab.id = 
+          gcmsbase_area_tab.region_id
+
+          where ( gcmsbase_area_tab.region_id = ? or
+          gcmsbase_area_tab.country_id = ?)
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.select2.value ||
+            activeRoute.queryParams.regionid)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value ||
+            activeRoute.queryParams.countryid)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+singleStep: false
+mode: auto
+modeConfigured: true
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_filter.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_filter.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_filter.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: true
+selected: true
+configured: true
+index: 2

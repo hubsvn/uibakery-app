@@ -1,0 +1,91 @@
+id: '16967476237830.0032631447231068478'
+name: updatechange
+nameConfigured: true
+steps:
+  - id: '16967827125990.7364439495527229'
+    type: UPDATE_ENTITY
+    name: update
+    params:
+      - type: datasourceId
+        value: GCMS-SING-VIAProxy
+        valueType: string
+      - type: resourceId
+        value: cafe_cafe_tab
+        valueType: string
+      - type: filter
+        value:
+          - column: id
+            operation: '='
+            value:
+              value: '{{ui.detail2.value.id}}'
+        valueType: custom
+      - type: entity
+        value:
+          mode: structured
+          valueByMode:
+            structured:
+              cafe_name:
+                value: '{{ui.detail2.value.cafe_name}}'
+              number_of_pc:
+                value: '{{ui.detail2.value.Size}}'
+              currentstatus:
+                value: '{{ui.detail2.value.status_code}}'
+              cafe_url:
+                value: '{{ui.detail2.value.cafe_url}}'
+              cafe_phone:
+                value: '{{ui.detail2.value.cafe_phone}}'
+              contact_email:
+                value: '{{ui.detail2.value.contact_email}}'
+              contact_name:
+                value: '{{ui.detail2.value.contact_name}}'
+              address:
+                value: '{{ui.detail2.value.address}}'
+              edit_date:
+                value: moment().startOf('day').format('YYYY-MM-DD HH:mm:ss')
+            custom: ''
+        valueType: custom
+      - type: replace
+        value: false
+        valueType: string
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '16967363346630.07488220613504293'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.updatechange.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.updatechange.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.updatechange.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+selected: true
+configured: true
+index: 7

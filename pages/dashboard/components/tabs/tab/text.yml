@@ -1,0 +1,116 @@
+id: '16967487199620.9449176658939173'
+definitionId: text
+parentSlotId: '16965949283610.6675893553513794'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 240
+      w: 24
+      h: 6
+  xs:
+    gridItem:
+      x: 0
+      y: 480
+      w: 24
+      h: 6
+properties:
+  name: text
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: >-
+    Để phân tích doanh thu và thống kê khách hàng cho doanh nghiệp SaaS của bạn,
+    bạn cần thu thập và xem xét nhiều điểm dữ liệu và chỉ số quan trọng. Dưới
+    đây là danh sách các chỉ số quan trọng và lĩnh vực tập trung cho doanh thu
+    và thống kê khách hàng:
+
+
+    Các chỉ số về Doanh thu:
+
+
+    Doanh thu hàng tháng (MRR): MRR là doanh thu dự kiến và có tính lặp lại từ
+    phí đăng ký hàng tháng. Đây là một chỉ số cơ bản đối với các doanh nghiệp
+    SaaS.
+
+
+    Doanh thu hàng năm (ARR): ARR đại diện cho phiên bản có chu kỳ hàng năm của
+    MRR. Nó cho bạn cái nhìn về doanh thu hàng năm từ các khoản đăng ký.
+
+
+    Tỷ lệ bỏ lỡ (Churn Rate): Tỷ lệ bỏ lỡ đo lường phần trăm khách hàng hủy đăng
+    ký trong một khoảng thời gian cụ thể. Tỷ lệ bỏ lỡ cao có thể ảnh hưởng đáng
+    kể đến doanh thu.
+
+
+    Doanh thu mở rộng (Expansion Revenue): Bao gồm doanh thu bổ sung từ khách
+    hàng hiện tại nâng cấp gói hoặc mua thêm các tính năng hoặc dịch vụ.
+
+
+    Thời hạn hợp đồng: Phân tích độ dài hợp đồng trung bình hoặc thời gian đăng
+    ký để hiểu cam kết của khách hàng.
+
+
+    Giá trị trọn đời của khách hàng (CLV hoặc LTV): CLV biểu thị tổng doanh thu
+    tạo ra từ một khách hàng trong suốt mối quan hệ với công ty của bạn. Nó giúp
+    xác định giá trị dài hạn của từng khách hàng.
+
+
+    Chi phí tiếp cận khách hàng (CAC): CAC đo lường chi phí để tiếp cận một
+    khách hàng mới. Tính toán điều này bằng cách tổng hợp các chi phí bán hàng
+    và tiếp thị của bạn trong một khoảng thời gian cụ thể và chia cho số lượng
+    khách hàng mới được tiếp cận trong khoảng thời gian đó.
+
+
+    Các chỉ số về Khách hàng:
+
+
+    Số lượng khách hàng: Theo dõi tổng số lượng khách hàng hoặc người dùng hoạt
+    động theo thời gian.
+
+
+    Phân đoạn khách hàng: Phân đoạn khách hàng dựa trên các yếu tố khác nhau như
+    ngành công nghiệp, địa lý, sử dụng hoặc loại gói. Điều này có thể cung cấp
+    thông tin quý báu về các hành vi khách hàng khác nhau.
+
+
+    Tỷ lệ duy trì khách hàng (Customer Retention Rate): Đo lường phần trăm khách
+    hàng tiếp tục sử dụng dịch vụ của bạn theo thời gian. Tỷ lệ duy trì cao
+    thường là một dấu hiệu tích cực.
+
+
+    Điểm Rào Net Promoter (NPS): NPS đo lường sự hài lòng và lòng trung thành
+    của khách hàng. Nó có thể cung cấp thông tin về tâm trạng của khách hàng.
+
+
+    Chỉ số hỗ trợ khách hàng: Theo dõi các chỉ số liên quan đến hỗ trợ khách
+    hàng, bao gồm thời gian phản hồi, tỷ lệ giải quyết và phản hồi của khách
+    hàng.
+
+
+    Chỉ số tương tác của người dùng: Theo dõi hoạt động và tương tác của người
+    dùng trong ứng dụng SaaS của bạn. Điều này có thể bao gồm các chỉ số như
+    đăng nhập, việc sử dụng tính năng và thời lượng phiên.
+
+
+    Phân phối địa lý: Hiểu rõ nơi các khách hàng của bạn đặt cư trú địa lý. Điều
+    này có thể quý báu cho chiến lược tiếp thị và mở rộng.
+
+
+    Phản hồi và Khảo sát Khách hàng: Thu thập ý kiến phản hồi từ khách hàng
+    thông qua các cuộc khảo sát và cuộc trò chuyện với khách hàng. Dữ liệu chất
+    lượng này có thể cung cấp thông tin về sự hài lòng của khách hàng và các
+    lĩnh vực cần cải thiện.
+
+
+    Tỷ lệ chuyển đổi: Phân tích tỷ lệ chuyển đổi tại các giai đoạn khác nhau của
+    hành trình của khách hàng, từ đăng ký thử nghiệm đến khách hàng trả phí.
+
+
+    Thông tin về Demographics của Khách hàng: Thu thập dữ liệu về demographics
+    của khách hàng, như tuổi, giới tính, chức vụ công việc và kích thước công
+    ty. Thông tin này có thể giúp trong việc tiếp thị và phát triển sản phẩm
+    đích thị.
+actions: {}
+index: 7
+slots: []

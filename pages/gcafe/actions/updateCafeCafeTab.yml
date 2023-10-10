@@ -1,0 +1,92 @@
+id: '16965968475860.2874809273190022'
+name: updateCafeCafeTab
+nameConfigured: true
+steps:
+  - id: '16966996195310.05800527863357341'
+    type: UPDATE_ENTITY
+    name: update
+    params:
+      - type: datasourceId
+        value: GCMS-SING-VIAProxy
+        valueType: string
+      - type: resourceId
+        value: cafe_cafe_tab
+        valueType: string
+      - type: filter
+        value:
+          - column: id
+            operation: '='
+            value:
+              value: '{{ui.gettableTable.selectedRow.data.id}}'
+        valueType: custom
+      - type: entity
+        value:
+          mode: structured
+          valueByMode:
+            structured:
+              cafe_name:
+                value: '{{ui.gettableTable.editedRow.data.cafe_name}}'
+              contact_name:
+                value: '{{ui.gettableTable.editedRow.data.contact_name}}'
+              number_of_pc:
+                value: '{{ui.gettableTable.editedRow.data.Size}}'
+              address:
+                value: '{{ui.gettableTable.editedRow.data.address}}'
+              district_id:
+                value: >-
+                  {{actions.get_district.data}}.find(item => item.districtname
+                  ===
+                  {{ui.gettableTable.editedRow.data.districtname}}).districtid
+              contact_email:
+                value: '{{ui.gettableTable.editedRow.data.contact_name}}'
+              contact_phone:
+                value: '{{ui.gettableTable.editedRow.data.contact_phone}}'
+              cafe_phone:
+                value: '{{ui.gettableTable.editedRow.data.cafe_phone}}'
+            custom: ''
+        valueType: custom
+      - type: replace
+        value: false
+        valueType: string
+      - type: bulk
+        value: false
+        valueType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.updateCafeCafeTab.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.updateCafeCafeTab.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.updateCafeCafeTab.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+assigned: true
+index: 8
