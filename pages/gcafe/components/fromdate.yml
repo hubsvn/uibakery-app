@@ -4,9 +4,9 @@ parentSlotId: '2'
 styles:
   xl:
     gridItem:
-      x: 15
+      x: 17
       y: 0
-      w: 3
+      w: 2
       h: 10
   xs:
     gridItem:
@@ -25,10 +25,13 @@ properties:
     align: left
   labelWidth: 0
   dateFormat:
-    value: dd MMM yyyy
+    value: yyyy-MM-dd
     dataValue: MMM dd, yyyy
     withData: false
-  value: moment().startOf('day').format('YYYY-MM-DD HH:mm:ss')
+  value: ''
+  required: false
+  minDate: ''
+  timezone: ''
 actions: {}
 index: 3
 slots: []

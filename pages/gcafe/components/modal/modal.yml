@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 264
+      y: 278
       w: 3
       h: 10
   xs:
@@ -28,7 +28,7 @@ actions:
     - action: '16967358226380.3123641557116539'
       paramCode: ''
       index: 0
-index: 9
+index: 10
 slots:
   - id: '16967345437200.5219972972890179'
     name: header

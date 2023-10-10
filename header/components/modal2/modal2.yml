@@ -4,9 +4,9 @@ parentSlotId: '16967488162300.8115645235877296'
 styles:
   xl:
     gridItem:
-      x: 21
+      x: 23
       y: 0
-      w: 3
+      w: 1
       h: 10
     buttonIconPlacement: left
     modalSize:
@@ -50,6 +50,7 @@ properties:
   closeOnBackdrop: true
   closeOnEsc: true
 index: 0
+actions: {}
 slots:
   - id: '16967488476890.2820191097265179'
     name: header

@@ -2,9 +2,9 @@ id: '16967366657880.9306383844761676'
 name: getdetail
 nameConfigured: true
 steps:
-  - id: '16967366747160.12406538404808387'
+  - id: '16969449019640.7074918621576984'
     type: customSQLQuery
-    name: query
+    name: query2
     params:
       - type: query
         value: |
@@ -63,7 +63,7 @@ steps:
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS-SING-VIAProxy
+        value: GCMS-SING
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
@@ -165,4 +165,4 @@ config:
 assigned: false
 selected: true
 configured: true
-index: 5
+index: 6

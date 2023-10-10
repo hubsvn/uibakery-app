@@ -8,7 +8,7 @@ steps:
     params:
       - type: code
         value: |-
-          if (ui.district.value) {
+          if (ui.search.value) {
           return true
           } else {
            return false 
@@ -19,7 +19,7 @@ steps:
         value:
           - condition: true
             steps:
-              - id: '16965844768030.18017119259520276'
+              - id: '16969447713630.5433559133957071'
                 type: customSQLQuery
                 name: query
                 params:
@@ -61,15 +61,13 @@ steps:
                       LEFT JOIN product_item_tab 
                           ON product_item_tab.id = product_cafe_product_tab.item_id
                       WHERE 
-                          cafe_cafe_tab.country_id = {{ui.select.value}} 
-                          AND cafe_cafe_tab.region_id =  {{ui.select2.value}} 
-                           AND cafe_cafe_tab.district_id =  {{ui.district.value}} 
-                          and (product_cafe_product_tab.end_date >= {{ui.fromdate.value}}  or product_cafe_product_tab.end_date is null)
+                          ({{ui.search.value}} <> "" AND CONCAT(cafe_cafe_tab.id,cafe_cafe_tab.cafe_name,authkey,contact_name,contact_email,contact_phone,address) like CONCAT('%', {{ui.search.value}}, '%'))
+                          and cafe_cafe_tab.country_id = {{ui.select.value}}
                       ORDER by cafe_cafe_tab.id
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
-                    value: GCMS-SING-VIAProxy
+                    value: GCMS-SING
                     valueType: custom
                     mustSelectFirst: true
                   - type: preparedQuery
@@ -110,18 +108,15 @@ steps:
                       LEFT JOIN product_item_tab 
                           ON product_item_tab.id = product_cafe_product_tab.item_id
                       WHERE 
-                          cafe_cafe_tab.country_id = ? 
-                          AND cafe_cafe_tab.region_id =  ? 
-                           AND cafe_cafe_tab.district_id =  ? 
-                          and (product_cafe_product_tab.end_date >= ?  or product_cafe_product_tab.end_date is null)
+                          (? <> "" AND CONCAT(cafe_cafe_tab.id,cafe_cafe_tab.cafe_name,authkey,contact_name,contact_email,contact_phone,address) like CONCAT('%', ?, '%'))
+                          and cafe_cafe_tab.country_id = ?
                       ORDER by cafe_cafe_tab.id
                     valueType: interpolatedValue
                   - type: preparedQueryParams
                     value:
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
                       - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.select2.value)
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.fromdate.value)
                     valueType: custom
                   - type: customDatabaseName
                     value: ''
@@ -144,9 +139,9 @@ steps:
                 nameConfigured: true
           - condition: false
             steps:
-              - id: '16967082850990.4833612021040028'
+              - id: '16969447193390.6558578094301408'
                 type: customSQLQuery
-                name: query2
+                name: query3
                 params:
                   - type: query
                     value: |
@@ -164,9 +159,9 @@ steps:
                           address,
                           product_item_tab.name as package,
                           product_cafe_product_tab.num_of_pc,
-                          product_cafe_product_tab.end_date,
                           product_cafe_product_tab.update_time,
                           product_cafe_product_tab.start_date,
+                           product_cafe_product_tab.end_date,
                           cafe_cafe_tab.district_id,
                           cafe_cafe_tab.area_id,
                           cafe_cafe_tab.region_id,    
@@ -183,18 +178,26 @@ steps:
                       LEFT JOIN product_cafe_product_tab 
                           ON product_cafe_product_tab.cafe_id = cafe_cafe_tab.id 
                           AND product_cafe_product_tab.item_id = 4 
-                          AND product_cafe_product_tab.end_date >= {{ui.fromdate.value}} 
                       LEFT JOIN product_item_tab 
                           ON product_item_tab.id = product_cafe_product_tab.item_id
                       WHERE 
                           cafe_cafe_tab.country_id = {{ui.select.value}} 
                           AND cafe_cafe_tab.region_id =  {{ui.select2.value}} 
-                          and product_cafe_product_tab.end_date >= {{ui.fromdate.value}}
-                      ORDER by cafe_cafe_tab.id
+                          AND cafe_cafe_tab.district_id =  {{ui.district.value}} 
+                          AND (
+                              CASE
+                                  WHEN {{ui.filter_exp.value.id}} = 'expired' THEN product_cafe_product_tab.end_date < {{ui.filter_exp.value.end_date}} 
+                                  WHEN {{ui.filter_exp.value.id}} = 'not_expired' THEN product_cafe_product_tab.end_date >= {{ui.filter_exp.value.end_date}}
+                                  WHEN {{ui.filter_exp.value.id}} = 'expired_to_this_month' THEN product_cafe_product_tab.end_date < {{ui.filter_exp.value.end_date}}  AND product_cafe_product_tab.end_date >= now()
+                                  WHEN {{ui.filter_exp.value.id}} = 'expired_to_next_2_weeks' THEN product_cafe_product_tab.end_date >  NOW() AND product_cafe_product_tab.end_date < {{ui.filter_exp.value.end_date}}
+                              END
+                          )
+                         
+                      ORDER by cafe_cafe_tab.id;
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
-                    value: GCMS-SING-VIAProxy
+                    value: GCMS-SING
                     valueType: custom
                     mustSelectFirst: true
                   - type: preparedQuery
@@ -213,9 +216,9 @@ steps:
                           address,
                           product_item_tab.name as package,
                           product_cafe_product_tab.num_of_pc,
-                          product_cafe_product_tab.end_date,
                           product_cafe_product_tab.update_time,
                           product_cafe_product_tab.start_date,
+                           product_cafe_product_tab.end_date,
                           cafe_cafe_tab.district_id,
                           cafe_cafe_tab.area_id,
                           cafe_cafe_tab.region_id,    
@@ -232,21 +235,40 @@ steps:
                       LEFT JOIN product_cafe_product_tab 
                           ON product_cafe_product_tab.cafe_id = cafe_cafe_tab.id 
                           AND product_cafe_product_tab.item_id = 4 
-                          AND product_cafe_product_tab.end_date >= ? 
                       LEFT JOIN product_item_tab 
                           ON product_item_tab.id = product_cafe_product_tab.item_id
                       WHERE 
                           cafe_cafe_tab.country_id = ? 
                           AND cafe_cafe_tab.region_id =  ? 
-                          and product_cafe_product_tab.end_date >= ?
-                      ORDER by cafe_cafe_tab.id
+                          AND cafe_cafe_tab.district_id =  ? 
+                          AND (
+                              CASE
+                                  WHEN ? = 'expired' THEN product_cafe_product_tab.end_date < ? 
+                                  WHEN ? = 'not_expired' THEN product_cafe_product_tab.end_date >= ?
+                                  WHEN ? = 'expired_to_this_month' THEN product_cafe_product_tab.end_date < ?  AND product_cafe_product_tab.end_date >= now()
+                                  WHEN ? = 'expired_to_next_2_weeks' THEN product_cafe_product_tab.end_date >  NOW() AND product_cafe_product_tab.end_date < ?
+                              END
+                          )
+                         
+                      ORDER by cafe_cafe_tab.id;
                     valueType: interpolatedValue
                   - type: preparedQueryParams
                     value:
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.fromdate.value)
                       - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
                       - __UI_BAKERY__FORMAT_IF_DATE__(ui.select2.value)
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.fromdate.value)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
                     valueType: custom
                   - type: customDatabaseName
                     value: ''
@@ -266,6 +288,7 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
+                nameConfigured: true
         valueType: custom
     level: 0
     fallthroughError: false

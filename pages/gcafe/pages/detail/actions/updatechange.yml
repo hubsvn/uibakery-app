@@ -2,12 +2,12 @@ id: '16967476237830.0032631447231068478'
 name: updatechange
 nameConfigured: true
 steps:
-  - id: '16967827125990.7364439495527229'
+  - id: '16969449143220.46015002378728687'
     type: UPDATE_ENTITY
-    name: update
+    name: update2
     params:
       - type: datasourceId
-        value: GCMS-SING-VIAProxy
+        value: GCMS-SING
         valueType: string
       - type: resourceId
         value: cafe_cafe_tab
@@ -46,10 +46,10 @@ steps:
         valueType: custom
       - type: replace
         value: false
-        valueType: string
+        valueType: custom
       - type: bulk
         value: false
-        valueType: string
+        valueType: custom
       - type: customDatabaseName
         value: ''
         valueType: interpolatedValue
@@ -88,4 +88,4 @@ config:
 assigned: true
 selected: true
 configured: true
-index: 7
+index: 8

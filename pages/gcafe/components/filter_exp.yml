@@ -4,9 +4,9 @@ parentSlotId: '2'
 styles:
   xl:
     gridItem:
-      x: 9
+      x: 13
       y: 0
-      w: 3
+      w: 2
       h: 10
   xs:
     gridItem:
@@ -23,22 +23,9 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: |-
-      [
-        {
-          "value": "option_1",
-          "title": "Đã gia hạn khi hết hạn trong tháng"
-        },
-        {
-          "value": "option_2",
-          "title": "Đã gia hạn khi hết tháng trước "
-        },  {
-          "value": "option_3",
-          "title": "Quay lại sau hơn 1 tháng Off "
-        }
-      ]
+    dataValue: '{{actions.exp_filter.data}}'
     withData: true
-  name: select4
+  name: filter_exp
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -47,14 +34,24 @@ properties:
     text: ''
     position: vertical
     align: left
-actions: {}
+  value: '{{actions.exp_filter.data[1].value}}'
+actions:
+  selectChange:
+    - action: '16965844728010.15285773980174544'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  init: []
+  focusEvent: []
+  blurEvent: []
 index: 6
 slots:
   - id: '16966002850810.8311673424732757'
     name: optionViewTypes
     children:
-      - id: '16966002850810.7140574142061833'
+      - id: '16969559570820.06530853702304129'
         definitionId: atomicString
+        parentSlotId: '16966002850810.8311673424732757'
         styles:
           xl:
             visible: true
@@ -65,6 +62,5 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-        parentSlotId: '16966002850810.8311673424732757'
-        index: 1
+        index: 0
         slots: []

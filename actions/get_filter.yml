@@ -2,7 +2,7 @@ id: '16965808268620.012515630635093533'
 name: get_filter
 nameConfigured: true
 steps:
-  - id: '16965808394960.0628138207126192'
+  - id: '16969445981570.6213093746544089'
     type: customSQLQuery
     name: get_country
     params:
@@ -11,7 +11,7 @@ steps:
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS-SING-VIAProxy
+        value: GCMS-SING
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
@@ -39,7 +39,7 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
-  - id: '16965810303860.9494879462932608'
+  - id: '16969446325480.5023811276232844'
     type: customSQLQuery
     name: get_district_and_region
     params:
@@ -52,7 +52,7 @@ steps:
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS-SING-VIAProxy
+        value: GCMS-SING
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
