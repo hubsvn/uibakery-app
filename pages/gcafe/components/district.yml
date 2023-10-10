@@ -4,9 +4,9 @@ parentSlotId: '2'
 styles:
   xl:
     gridItem:
-      x: 6
+      x: 2
       y: 0
-      w: 3
+      w: 2
       h: 10
   xs:
     gridItem:
@@ -34,7 +34,8 @@ properties:
     text: ''
     position: horizontal
     align: left
-  value: ''
+  value: '{{actions.get_district.data[0].districtid}}'
+  labelWidth: 0
 actions:
   selectChange:
     - action: '16965844728010.15285773980174544'

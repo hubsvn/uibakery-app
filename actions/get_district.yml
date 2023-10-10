@@ -2,7 +2,7 @@ id: '16967066328950.6238582120995999'
 name: get_district
 nameConfigured: true
 steps:
-  - id: '16967066328950.46927490780106806'
+  - id: '16969447855670.6182368915670722'
     type: customSQLQuery
     name: get_region
     params:
@@ -31,12 +31,12 @@ steps:
           gcmsbase_area_tab.region_id
 
           where ( gcmsbase_area_tab.region_id = {{ui.select2.value ||
-          activeRoute.queryParams.regionid}} or gcmsbase_area_tab.country_id =
+          activeRoute.queryParams.regionid}} and gcmsbase_area_tab.country_id =
           {{ui.select.value || activeRoute.queryParams.countryid}})
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS-SING-VIAProxy
+        value: GCMS-SING
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
@@ -63,7 +63,7 @@ steps:
           left join gcmsbase_region_tab on gcmsbase_region_tab.id = 
           gcmsbase_area_tab.region_id
 
-          where ( gcmsbase_area_tab.region_id = ? or
+          where ( gcmsbase_area_tab.region_id = ? and
           gcmsbase_area_tab.country_id = ?)
         valueType: interpolatedValue
       - type: preparedQueryParams

@@ -29,13 +29,13 @@ slots:
             name: content
             bindings: {}
             children:
-              - components/select.yml
               - components/select2.yml
               - components/district.yml
               - components/fromdate.yml
               - components/todate.yml
               - components/gettableTable.yml
               - components/select3.yml
-              - components/select4.yml
+              - components/filter_exp.yml
               - components/button.yml
               - components/modal/modal.yml
+              - components/search.yml

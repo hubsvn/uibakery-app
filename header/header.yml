@@ -22,3 +22,4 @@ children:
         children:
           - components/modal2/modal2.yml
           - components/horizontalMenu.yml
+          - components/select.yml

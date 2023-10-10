@@ -1,18 +1,18 @@
 id: '16965808990310.3870808832630983'
 definitionId: selectWithAtomics
-parentSlotId: '2'
+parentSlotId: '16967488162300.8115645235877296'
 styles:
   xl:
     gridItem:
-      x: 0
+      x: 22
       y: 0
-      w: 3
+      w: 1
       h: 10
   xs:
     gridItem:
-      x: 0
-      y: 481
-      w: 3
+      x: 21
+      y: 20
+      w: 1
       h: 10
 properties:
   options:

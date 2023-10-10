@@ -2,12 +2,12 @@ id: '16965968475860.2874809273190022'
 name: updateCafeCafeTab
 nameConfigured: true
 steps:
-  - id: '16966996195310.05800527863357341'
+  - id: '16969448184760.8324535314221089'
     type: UPDATE_ENTITY
     name: update
     params:
       - type: datasourceId
-        value: GCMS-SING-VIAProxy
+        value: GCMS-SING
         valueType: string
       - type: resourceId
         value: cafe_cafe_tab
@@ -47,10 +47,10 @@ steps:
         valueType: custom
       - type: replace
         value: false
-        valueType: string
+        valueType: custom
       - type: bulk
         value: false
-        valueType: string
+        valueType: custom
       - type: customDatabaseName
         value: ''
         valueType: interpolatedValue
@@ -66,6 +66,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
 singleStep: false
 mode: manual
 modeConfigured: false
@@ -89,4 +90,6 @@ config:
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
 assigned: true
-index: 8
+selected: true
+configured: true
+index: 9
