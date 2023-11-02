@@ -2,9 +2,9 @@ id: '16967416485710.4506181472266171'
 name: getfullfilter
 nameConfigured: true
 steps:
-  - id: '16969447941530.6570739891034074'
+  - id: '16988922662600.1966511955094068'
     type: customSQLQuery
-    name: query2
+    name: query
     params:
       - type: query
         value: >-
@@ -42,7 +42,7 @@ steps:
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS-SING
+        value: GCMS SING
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery

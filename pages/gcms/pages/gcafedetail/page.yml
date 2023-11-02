@@ -1,0 +1,27 @@
+id: '16989075112400.5943670874431344'
+name: GCafeDetail
+url: gcafedetail
+roleIds: []
+disableInMenu: true
+parentPageId: '16989074711500.7344892973672945'
+index: 0
+slots:
+  - id: '16989075112400.24175869156631236'
+    name: content
+    children:
+      - id: '16989075112400.1729758235187686'
+        definitionId: grid
+        parentSlotId: '16989075112400.24175869156631236'
+        styles: {}
+        properties:
+          name: gcafedetail
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '16989075112400.3362399684484294'
+            name: content
+            children:
+              - components/tabset/tabset.yml

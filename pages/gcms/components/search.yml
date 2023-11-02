@@ -1,0 +1,28 @@
+id: '16989074878660.19283710992581926'
+definitionId: stringEdit
+parentSlotId: '16989074711510.5398923751737001'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 10
+      w: 21
+      h: 10
+  xs:
+    gridItem:
+      x: 0
+      y: 324
+      w: 24
+      h: 10
+properties:
+  name: search
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: ''
+    position: horizontal
+    align: left
+  placeholder: any cafeid, phone ,cafe name, contact name, authkey, address
+actions: {}
+slots: []

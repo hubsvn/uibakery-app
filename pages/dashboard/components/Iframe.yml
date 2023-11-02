@@ -1,0 +1,42 @@
+id: '16989062933790.5823708297023702'
+definitionId: customComponent
+parentSlotId: '16989056406330.7478003559081694'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 4
+      w: 24
+      h: 396
+  xs:
+    gridItem:
+      x: 0
+      y: 60
+      w: 24
+      h: 30
+properties:
+  data: |-
+    {
+      title: 'Custom Component'
+    }
+  template: |-
+    <div class="scrollbar-hider" style="overflow:hidden">
+            <div class="scrollbar-hider-margin" style="margin-right: -17px;">
+                <iframe src="https://metabase.8.hubs.vn/public/dashboard/e03633cb-8fe4-4eb2-99dc-447c0a40da4a" 
+                        style="display: block; 
+                               overflow: hidden scroll; 
+                               height:100vh; 
+                               width: 100%" 
+                        frameborder="0" loading="lazy">
+                 </iframe>
+            </div>
+    </div>
+  name: Iframe
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  cssClasses:
+    - Iframe
+    - ''
+actions: {}
+slots: []

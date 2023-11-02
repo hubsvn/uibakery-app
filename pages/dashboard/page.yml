@@ -1,19 +1,17 @@
-id: '16965916834120.3856361333602476'
+id: '16989056406330.9105003011061585'
 name: Dashboard
 url: dashboard
-roleIds:
-  - wag0QxrE2d
-  - dN8IJdZYzo
+roleIds: []
 disableInMenu: false
-parentPageId: null
+parentPageId: ''
 index: 0
 slots:
-  - id: '16965916834120.2543636296121894'
+  - id: '16989056406330.617778874482048'
     name: content
     children:
-      - id: '16965916834120.3100176773359191'
+      - id: '16989056406330.25182125144319234'
         definitionId: grid
-        parentSlotId: '16965916834120.2543636296121894'
+        parentSlotId: '16989056406330.617778874482048'
         styles: {}
         properties:
           name: dashboard
@@ -23,8 +21,7 @@ slots:
             - xs
         index: 0
         slots:
-          - id: '16965916834130.7014613540972099'
+          - id: '16989056406330.7478003559081694'
             name: content
             children:
-              - components/tabs/tabs.yml
-              - components/module.yml
+              - components/Iframe.yml

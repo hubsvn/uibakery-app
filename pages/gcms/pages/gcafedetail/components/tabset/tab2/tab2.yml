@@ -1,0 +1,20 @@
+id: '16989081582240.6868174779739586'
+definitionId: tab
+styles: {}
+properties:
+  name: tab2
+  title: Transaction
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  icon:
+    value: shopping-cart
+    dataValue: ''
+    withData: false
+parentSlotId: '16989081582240.34789640279168976'
+index: 1
+slots:
+  - id: '16989081582240.4886387497876361'
+    name: content
+    children:
+      - table.yml

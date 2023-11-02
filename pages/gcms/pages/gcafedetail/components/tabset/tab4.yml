@@ -1,0 +1,19 @@
+id: '16989084339330.3796522930610613'
+definitionId: tab
+parentSlotId: '16989081582240.34789640279168976'
+styles: {}
+properties:
+  name: tab4
+  title: Tech Overview
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  icon:
+    value: monitor-outline
+    dataValue: ''
+    withData: false
+index: 3
+slots:
+  - id: '16989084339330.9410337839065233'
+    name: content
+    children: []
