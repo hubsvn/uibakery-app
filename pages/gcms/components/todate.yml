@@ -1,0 +1,40 @@
+id: '16989074878660.6750170693945292'
+definitionId: dateEdit
+parentSlotId: '16989074711510.5398923751737001'
+styles:
+  xl:
+    gridItem:
+      x: 19
+      y: 0
+      w: 5
+      h: 10
+  xs:
+    gridItem:
+      x: 0
+      y: 30
+      w: 24
+      h: 10
+properties:
+  name: todate
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: To Date
+    position: horizontal
+    align: left
+  labelWidth: 0
+  dateFormat:
+    value: dd MMM yyyy
+    dataValue: MMM dd, yyyy
+    withData: false
+  timezone: '+7'
+  minDate: |-
+    let date = new Date({{ui.fromdate.value}});
+    date.setDate(date.getDate() + 1);
+    return date;
+  value: ''
+  cssClasses:
+    - fixed-width
+actions: {}
+slots: []

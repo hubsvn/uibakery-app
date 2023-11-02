@@ -1,0 +1,35 @@
+id: '16989074711500.7344892973672945'
+name: GCMS
+url: gcms
+roleIds: []
+disableInMenu: false
+parentPageId: ''
+index: 1
+slots:
+  - id: '16989074711500.9643367505970819'
+    name: content
+    children:
+      - id: '16989074711510.34923148076356636'
+        definitionId: grid
+        parentSlotId: '16989074711500.9643367505970819'
+        styles: {}
+        properties:
+          name: gcms
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '16989074711510.5398923751737001'
+            name: content
+            children:
+              - components/select2.yml
+              - components/district.yml
+              - components/fromdate.yml
+              - components/todate.yml
+              - components/gettableTable.yml
+              - components/filter_exp.yml
+              - components/button4.yml
+              - components/search.yml
+              - components/modal3/modal3.yml

@@ -1,0 +1,21 @@
+id: '16989074878660.5161041360094356'
+definitionId: heading
+styles:
+  xl:
+    fontSize:
+      customValue: 14
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    gridItem:
+      h: 10
+      w: 6
+properties:
+  name: heading3
+  text: Modal title
+  verticalAlignment: middle
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '16989074878660.8506853297716326'
+index: 0
+slots: []

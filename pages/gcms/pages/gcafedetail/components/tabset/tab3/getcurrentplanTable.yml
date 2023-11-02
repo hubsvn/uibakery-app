@@ -1,0 +1,217 @@
+id: '16989092908500.7531023447543514'
+definitionId: smartTable
+parentSlotId: '16989083156650.7474496049209154'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 1
+      w: 24
+      h: 46
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 80
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        { prop: 'id', type: 'number', primaryKey: true },
+       'full_name',
+        { prop: 'avatar', type: 'image' },
+        { prop: 'email', type: 'link' },
+      ]
+    withData: false
+  data: '{{actions.getcurrentplan.data}}'
+  name: getcurrentplanTable
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Getcurrentplans
+  showLoading:
+    withData: true
+    dataValue: '{{actions.getcurrentplan.loading}}'
+    value: false
+  disableRowSelection:
+    value: true
+    dataValue: 'false'
+    withData: false
+  sortColumn:
+    value: end_date
+    dataValue: ''
+    withData: false
+  sortDirection:
+    value: desc
+    dataValue: asc
+    withData: false
+  showExportAction:
+    value: false
+    dataValue: 'true'
+    withData: false
+  heightMode: auto
+  limit: '15'
+  serverSidePagination: true
+  containerStyles:
+    withData: false
+    dataValue: |-
+      {
+        padding: 'default',
+        shadow: 'default',
+        border: 'default'
+      }
+    value:
+      padding: default
+      shadow: default
+      border: default
+  sortable:
+    value: false
+    dataValue: 'true'
+    withData: false
+  resetPageOnFilterOrSortChange:
+    value: false
+    dataValue: 'true'
+    withData: false
+actions: {}
+slots:
+  - id: '16989092908500.032404005088383814'
+    name: columns
+    children:
+      - id: '16989092909530.669012464494968'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString6
+          prop: package
+          primaryKey: true
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16989092908500.032404005088383814'
+        index: 0
+        slots: []
+      - id: '16989092909530.46011398537185544'
+        definitionId: atomicNumber
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber
+          prop: num_of_pc
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 60
+          filter: true
+        parentSlotId: '16989092908500.032404005088383814'
+        index: 1
+        slots: []
+      - id: '16989092909530.7042911549840669'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime4
+          prop: end_date
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16989092908500.032404005088383814'
+        index: 3
+        slots: []
+      - id: '16989092909530.5763605022991041'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime5
+          prop: update_time
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16989092908500.032404005088383814'
+        index: 4
+        slots: []
+      - id: '16989092909530.36158281346538423'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime6
+          prop: start_date
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16989092908500.032404005088383814'
+        index: 2
+        slots: []
+      - id: '16989095353980.9943316031977723'
+        definitionId: atomicButton
+        parentSlotId: '16989092908500.032404005088383814'
+        styles:
+          xl:
+            iconPlacement: center
+        properties:
+          name: atomicButton
+          text: '{{value}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          prop: Manager
+          primaryKey: true
+          sortable: false
+          linkInfo:
+            active: internalPath
+            internalPath: ''
+            externalPath: ''
+          queryParams:
+            withData: true
+            dataValue: ''
+            value:
+              - name: cafeid
+                value: '{{activeRoute.queryParams.cafeid}}'
+          openInNewTab: false
+          title: Manager
+          icon:
+            value: settings-2-outline
+            dataValue: star-outline
+            withData: false
+        actions:
+          buttonClick:
+            - action: '16989107882590.7486698407257593'
+              paramCode: ''
+              blockPageLoad: false
+              index: 0
+        index: 5
+        slots: []

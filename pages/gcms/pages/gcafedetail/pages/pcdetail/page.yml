@@ -1,0 +1,27 @@
+id: '16989096265760.555943590473045'
+name: PcDetail
+url: pcdetail
+roleIds: []
+disableInMenu: true
+parentPageId: '16989075112400.5943670874431344'
+index: 0
+slots:
+  - id: '16989096265760.39120380854008574'
+    name: content
+    children:
+      - id: '16989096265760.8373301032004576'
+        definitionId: grid
+        parentSlotId: '16989096265760.39120380854008574'
+        styles: {}
+        properties:
+          name: pcdetail
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '16989096265760.754438779233904'
+            name: content
+            children:
+              - components/gcapcTable.yml

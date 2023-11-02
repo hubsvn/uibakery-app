@@ -19,7 +19,7 @@ steps:
         value:
           - condition: true
             steps:
-              - id: '16969447713630.5433559133957071'
+              - id: '16988922012330.7933421030212882'
                 type: customSQLQuery
                 name: query
                 params:
@@ -67,7 +67,7 @@ steps:
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
-                    value: GCMS-SING
+                    value: GCMS SING
                     valueType: custom
                     mustSelectFirst: true
                   - type: preparedQuery
@@ -139,7 +139,7 @@ steps:
                 nameConfigured: true
           - condition: false
             steps:
-              - id: '16969447193390.6558578094301408'
+              - id: '16988922125450.9894826139115218'
                 type: customSQLQuery
                 name: query3
                 params:
@@ -197,7 +197,7 @@ steps:
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
-                    value: GCMS-SING
+                    value: GCMS SING
                     valueType: custom
                     mustSelectFirst: true
                   - type: preparedQuery

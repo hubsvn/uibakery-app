@@ -2,7 +2,7 @@ id: '16967066328950.6238582120995999'
 name: get_district
 nameConfigured: true
 steps:
-  - id: '16969447855670.6182368915670722'
+  - id: '16988922324950.028284899674130504'
     type: customSQLQuery
     name: get_region
     params:
@@ -36,7 +36,7 @@ steps:
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS-SING
+        value: GCMS SING
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery

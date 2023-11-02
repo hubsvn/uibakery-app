@@ -1,0 +1,405 @@
+id: '16989075184250.531990566622855'
+definitionId: detail
+parentSlotId: '16989081582240.5744269062162854'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 101
+  xs:
+    gridItem:
+      id: '16989075184250.531990566622855'
+      x: 0
+      y: 0
+      w: 13
+      h: 101
+properties:
+  dynamicFields:
+    value: []
+    dataValue: |-
+      [
+        { prop: 'id', type: 'number', primaryKey: true },
+       'full_name',
+        { prop: 'avatar', type: 'image' },
+        { prop: 'email', type: 'link' },
+      ]
+    withData: false
+  entity: '{{actions.getgcafedetail.data[0]}}'
+  name: detail
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: ''
+  columns: '3'
+  showEditAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions:
+  changeEvent:
+    - action: '16967421499530.2639369623895702'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  init:
+    - action: '16967416485710.4506181472266171'
+      paramCode: ''
+      blockPageLoad: false
+      index: 1
+  submitEvent:
+    - action: '16967476237830.0032631447231068478'
+      paramCode: ''
+      blockPageLoad: false
+      index: 2
+  detailClick: []
+  customButtonClick: []
+slots:
+  - id: '16989075184250.6263879687761387'
+    name: structure
+    children:
+      - id: '16989075184250.4874443339013921'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString36
+          prop: id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 0
+        slots: []
+      - id: '16989075184250.0950014132583259'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString37
+          prop: district_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 1
+        slots: []
+      - id: '16989075184250.13230695007427684'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString38
+          prop: area_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 2
+        slots: []
+      - id: '16989075184250.3977545143285526'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString39
+          prop: region_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 3
+        slots: []
+      - id: '16989075184250.24212065176804232'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString40
+          prop: cafe_name
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 4
+        slots: []
+      - id: '16989075184250.28918404615032123'
+        definitionId: atomicNumber
+        styles:
+          xl:
+            visible: true
+            color:
+              value: basic
+              dataValue: ''
+              withData: true
+        properties:
+          name: atomicNumber4
+          prop: Size
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          editable: false
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 5
+        slots: []
+      - id: '16989075184250.6523093097024235'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString41
+          prop: authkey
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 6
+        slots: []
+      - id: '16989075184250.722338647575953'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString42
+          prop: contact_name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 7
+        slots: []
+      - id: '16989075184250.8347796083727574'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString43
+          prop: contact_phone
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 8
+        slots: []
+      - id: '16989075184250.6126974873047433'
+        definitionId: atomicSelect
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect11
+          prop: regionname
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          options:
+            value:
+              - value: Miền Bắc
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16967384398040.6181864929960832'
+            dataValue: >-
+              const regionidToFilter = {{actions.getfullfilter.data}}.map(item
+              => item.regionname); // replace with the districtid you want to
+              filter
+
+              return regionidToFilter
+            withData: true
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 9
+        slots: []
+      - id: '16989075184250.9911229088563294'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString44
+          prop: cafe_phone
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 10
+        slots: []
+      - id: '16989075184250.44226988556005975'
+        definitionId: atomicSelect
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect12
+          prop: status_code
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          options:
+            value:
+              - value: 3
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16967384941270.177684437891374'
+                title: Healthy
+              - value: '1'
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '16967385304440.3107582360412544'
+                title: New
+              - value: '2'
+                color: warning
+                __UIBAKERY__SYSTEM_ID__: '16967385639590.031527770364064844'
+                title: Need Approved
+              - value: '4'
+                color: danger
+                __UIBAKERY__SYSTEM_ID__: '16967386198260.38268169090635085'
+                title: Banned
+            dataValue: |-
+              [
+                {
+                  value: 3,
+                  color: 'primary'
+                }
+              ]
+            withData: false
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 11
+        slots: []
+      - id: '16989075184250.9754074323450064'
+        definitionId: atomicSelect
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect13
+          prop: districtname
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          options:
+            value:
+              - value: Hà Nội
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16967384354650.2691547993432115'
+            dataValue: >-
+              const regionidIdToFilter = {{state.filterdata.regionname}}; //
+              replace with the districtid you want to filter
+
+              const filteredData = {{actions.getfullfilter.data}}.filter(item =>
+              item.regionname === regionidIdToFilter);
+
+              return filteredData.map(item => item.districtname);
+            withData: true
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 12
+        actions:
+          tagClick: []
+        slots: []
+      - id: '16989075184250.6241071140938095'
+        definitionId: atomicLink
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicLink3
+          prop: contact_email
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 13
+        slots: []
+      - id: '16989075184250.6914691632018133'
+        definitionId: atomicLink
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicLink4
+          prop: cafe_url
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 14
+        slots: []
+      - id: '16989075184250.546157708238832'
+        definitionId: atomicSelect
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect14
+          prop: areaname
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          options:
+            value:
+              - value: Ba Đình
+                color: primary
+                __UIBAKERY__SYSTEM_ID__: '16967384424610.40872545937211036'
+            dataValue: >-
+              const districtIdToFilter = {{ state.filterdata.districtname}}; //
+              replace with the districtid you want to filter
+
+              const filteredData = {{actions.getfullfilter.data}}.filter(item =>
+              item.districtname === districtIdToFilter);
+
+              return filteredData.map(item => item.areaname);
+            withData: true
+          allowResetValue:
+            value: false
+            dataValue: 'false'
+            withData: false
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 15
+        slots: []
+      - id: '16989075184250.6263303872795047'
+        definitionId: atomicText
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicText6
+          prop: address
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 16
+        slots: []
+      - id: '16989075184250.3524115500308036'
+        definitionId: atomicJsonEditor
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicJsonEditor3
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          prop: package_info
+        parentSlotId: '16989075184250.6263879687761387'
+        index: 17
+        slots: []
