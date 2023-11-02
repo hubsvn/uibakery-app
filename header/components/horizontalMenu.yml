@@ -27,8 +27,8 @@ properties:
         link: '/dashboard'
       },
       {
-        title: 'GCafe',
-        link: '/gcafe',
+        title: 'GCMS',
+        link: '/gcms',
       }
     ]
   alignment: center
