@@ -44,6 +44,8 @@ properties:
     value: false
     dataValue: 'false'
     withData: false
+  cssClasses:
+    - fixed-width
 actions:
   selectChange:
     - action: '16967421499530.2639369623895702'
