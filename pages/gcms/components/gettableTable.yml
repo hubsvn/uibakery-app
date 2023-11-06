@@ -89,7 +89,7 @@ properties:
     value: false
     dataValue: 'true'
     withData: false
-  selectedRowIndex: '-1'
+  selectedRowIndex: ''
 actions:
   smartTableEdit: []
   init: []
