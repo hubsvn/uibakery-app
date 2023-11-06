@@ -37,7 +37,7 @@ properties:
     withData: true
   showFilter: true
   triggerRowSelectOnInit:
-    value: true
+    value: false
     dataValue: 'false'
     withData: false
   sortColumn:
@@ -89,7 +89,7 @@ properties:
     value: false
     dataValue: 'true'
     withData: false
-  selectedRowIndex: ''
+  selectedRowIndex: '-1'
 actions:
   smartTableEdit: []
   init: []
