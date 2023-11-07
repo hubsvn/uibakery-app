@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 4
+      y: 0
       w: 24
-      h: 396
+      h: 380
   xs:
     gridItem:
       x: 0
@@ -38,5 +38,30 @@ properties:
   cssClasses:
     - Iframe
     - ''
+  heightMode: fixed
+  allowCamera:
+    value: true
+    dataValue: 'false'
+    withData: false
+  allowDisplayCapture:
+    value: true
+    dataValue: 'false'
+    withData: false
+  allowClipboardWrite:
+    value: true
+    dataValue: 'false'
+    withData: false
+  allowGeolocation:
+    value: true
+    dataValue: 'false'
+    withData: false
+  allowMicrophone:
+    value: true
+    dataValue: 'false'
+    withData: false
+  allowPayment:
+    value: true
+    dataValue: 'false'
+    withData: false
 actions: {}
 slots: []
