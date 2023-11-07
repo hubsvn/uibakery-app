@@ -1,26 +1,26 @@
-id: '16989096265760.555943590473045'
-name: PcDetail
-url: pcdetail
+id: '16993016404060.12119569705486599'
+name: CRM
+url: crm
 roleIds: []
 disableInMenu: true
-parentPageId: '16989075112400.5943670874431344'
-index: 0
+parentPageId: ''
+index: 2
 slots:
-  - id: '16989096265760.39120380854008574'
+  - id: '16993016404060.035570459033026136'
     name: content
     children:
-      - id: '16989096265760.8373301032004576'
+      - id: '16993016404060.002517531246518212'
         definitionId: grid
-        parentSlotId: '16989096265760.39120380854008574'
+        parentSlotId: '16993016404060.035570459033026136'
         styles: {}
         properties:
-          name: pcdetail
+          name: crm
           pageTitle: '{{app.name}} - {{activeRoute.name}}'
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
         index: 0
         slots:
-          - id: '16989096265760.754438779233904'
+          - id: '16993016404070.4638084273953331'
             name: content
             children: []

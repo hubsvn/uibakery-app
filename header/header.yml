@@ -4,7 +4,12 @@ children:
   - id: '16967488162300.8731594605230752'
     definitionId: layoutHeader
     parentSlotId: '16967488162280.4993338213581946'
-    styles: {}
+    styles:
+      xl:
+        backgroundColor:
+          value: primary
+          dataValue: default
+          withData: false
     properties:
       name: layoutHeader
       __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
@@ -15,11 +20,23 @@ children:
         value: true
         dataValue: 'false'
         withData: false
+      containerStyles:
+        withData: false
+        dataValue: |-
+          {
+            padding: 'default',
+            shadow: 'default',
+            border: 'none'
+          }
+        value:
+          padding: default
+          shadow: default
+          border: default
     index: 0
     slots:
       - id: '16967488162300.8115645235877296'
         name: content
         children:
-          - components/modal2/modal2.yml
           - components/horizontalMenu.yml
           - components/select.yml
+          - components/button.yml

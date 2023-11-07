@@ -1,0 +1,27 @@
+id: '16993019797400.6772236612115898'
+name: Page Builder
+url: builder
+roleIds: []
+disableInMenu: false
+parentPageId: '16993067769220.8710402229212624'
+index: 0
+slots:
+  - id: '16993019797400.704672798536703'
+    name: content
+    children:
+      - id: '16993019797410.9513032718398202'
+        definitionId: grid
+        parentSlotId: '16993019797400.704672798536703'
+        styles: {}
+        properties:
+          name: mkt
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '16993019797410.6203166411784786'
+            name: content
+            children:
+              - components/iframe.yml

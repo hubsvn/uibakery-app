@@ -1,19 +1,19 @@
-id: '16989092908500.7531023447543514'
+id: '16993235444280.12347095467506453'
 definitionId: smartTable
-parentSlotId: '16989083156650.7474496049209154'
+parentSlotId: '16989081582240.5744269062162854'
 styles:
   xl:
     gridItem:
       x: 0
-      y: 1
+      y: 101
       w: 24
       h: 46
   xs:
     gridItem:
       x: 0
-      y: 0
+      y: 101
       w: 24
-      h: 80
+      h: 46
 properties:
   dynamicColumns:
     value: []
@@ -30,7 +30,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  title: Getcurrentplans
+  title: Current Subscription
   showLoading:
     withData: true
     dataValue: '{{actions.getcurrentplan.loading}}'
@@ -76,10 +76,10 @@ properties:
     withData: false
 actions: {}
 slots:
-  - id: '16989092908500.032404005088383814'
+  - id: '16993235444280.47684599390251425'
     name: columns
     children:
-      - id: '16989092909530.669012464494968'
+      - id: '16993235444280.987410445449534'
         definitionId: atomicString
         styles:
           xl:
@@ -93,10 +93,10 @@ slots:
             - xs
           width: 120
           filter: true
-        parentSlotId: '16989092908500.032404005088383814'
+        parentSlotId: '16993235444280.47684599390251425'
         index: 0
         slots: []
-      - id: '16989092909530.46011398537185544'
+      - id: '16993235444280.6773308415426693'
         definitionId: atomicNumber
         styles:
           xl:
@@ -110,52 +110,10 @@ slots:
             - xs
           width: 60
           filter: true
-        parentSlotId: '16989092908500.032404005088383814'
+        parentSlotId: '16993235444280.47684599390251425'
         index: 1
         slots: []
-      - id: '16989092909530.7042911549840669'
-        definitionId: atomicDateTime
-        styles:
-          xl:
-            visible: true
-        properties:
-          name: atomicDateTime4
-          prop: end_date
-          primaryKey: false
-          timeFormat:
-            value: ''
-            dataValue: HH:mm
-            withData: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: 120
-          filter: true
-        parentSlotId: '16989092908500.032404005088383814'
-        index: 3
-        slots: []
-      - id: '16989092909530.5763605022991041'
-        definitionId: atomicDateTime
-        styles:
-          xl:
-            visible: true
-        properties:
-          name: atomicDateTime5
-          prop: update_time
-          primaryKey: false
-          timeFormat:
-            value: ''
-            dataValue: HH:mm
-            withData: false
-          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
-            - xl
-            - xs
-          width: 120
-          filter: true
-        parentSlotId: '16989092908500.032404005088383814'
-        index: 4
-        slots: []
-      - id: '16989092909530.36158281346538423'
+      - id: '16993235444280.7666801670336691'
         definitionId: atomicDateTime
         styles:
           xl:
@@ -173,45 +131,48 @@ slots:
             - xs
           width: 120
           filter: true
-        parentSlotId: '16989092908500.032404005088383814'
+        parentSlotId: '16993235444280.47684599390251425'
         index: 2
         slots: []
-      - id: '16989095353980.9943316031977723'
-        definitionId: atomicButton
-        parentSlotId: '16989092908500.032404005088383814'
+      - id: '16993235444280.9560350352087559'
+        definitionId: atomicDateTime
         styles:
           xl:
-            iconPlacement: center
+            visible: true
         properties:
-          name: atomicButton
-          text: '{{value}}'
+          name: atomicDateTime4
+          prop: end_date
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          prop: Manager
-          primaryKey: true
-          sortable: false
-          linkInfo:
-            active: internalPath
-            internalPath: ''
-            externalPath: ''
-          queryParams:
-            withData: true
-            dataValue: ''
-            value:
-              - name: cafeid
-                value: '{{activeRoute.queryParams.cafeid}}'
-          openInNewTab: false
-          title: Manager
-          icon:
-            value: settings-2-outline
-            dataValue: star-outline
+          width: 120
+          filter: true
+        parentSlotId: '16993235444280.47684599390251425'
+        index: 3
+        slots: []
+      - id: '16993235444280.5075325588954209'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime5
+          prop: update_time
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
             withData: false
-        actions:
-          buttonClick:
-            - action: '16989107882590.7486698407257593'
-              paramCode: ''
-              blockPageLoad: false
-              index: 0
-        index: 5
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16993235444280.47684599390251425'
+        index: 4
         slots: []

@@ -1,0 +1,456 @@
+id: '16993224650170.2796720217318891'
+definitionId: smartTable
+parentSlotId: '16989083156650.7474496049209154'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 345
+  xs:
+    gridItem:
+      x: 0
+      y: 80
+      w: 24
+      h: 345
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        { prop: 'id', type: 'number', primaryKey: true },
+       'full_name',
+        { prop: 'avatar', type: 'image' },
+        { prop: 'email', type: 'link' },
+      ]
+    withData: false
+  data: '{{actions.gcapc.data}}'
+  name: gcapcTable
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Gcapcs
+  showLoading:
+    withData: true
+    dataValue: '{{actions.gcapc.loading}}'
+    value: false
+  selectedRowIndex: '0'
+  limit: '25'
+  showExportAction:
+    value: false
+    dataValue: 'true'
+    withData: false
+  showEditAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showBulkEditAction:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showReloadAction:
+    value: true
+    dataValue: 'false'
+    withData: false
+  resetActivePageOnNewData: false
+  totalRowConfig:
+    show: false
+    position: top
+    rowColor: hint
+    textStyle: []
+    textColor: basic
+    updateWhenFiltering: true
+    themeDefaultOverridePropertyKey: smartTableTotalRowConfig
+actions:
+  smartTableEdit:
+    - action: '16993178149380.637421165709996'
+      paramCode: ''
+      blockPageLoad: false
+      index: 0
+  init: []
+  smartTableCreate: []
+  smartTableBulkEdit: []
+  smartTableDelete: []
+  smartTableRowSelect: []
+  smartTableRowClick: []
+  smartTablePageSelect: []
+  smartTableFilterChange: []
+  smartTableSortChange: []
+  smartTableReload: []
+slots:
+  - id: '16993224650170.19779267561052238'
+    name: columns
+    children:
+      - id: '16993224650170.8134123188695495'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicString16
+          prop: id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: true
+          filter: true
+          width: 60
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 0
+        slots: []
+      - id: '16993224650170.1695973944018725'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString17
+          prop: cafeid
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+          forceView: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 1
+        slots: []
+      - id: '16993224650170.34421984470516986'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString18
+          prop: machineid
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 2
+        slots: []
+      - id: '16993224650170.47206742724557804'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString19
+          prop: pcname
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 3
+        slots: []
+      - id: '16993224650170.8807430246852939'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString20
+          prop: volsn
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 4
+        slots: []
+      - id: '16993224650170.13547337052244646'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString25
+          prop: sid
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 5
+        slots: []
+      - id: '16993224650170.04637244697071918'
+        definitionId: atomicString
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicString26
+          prop: wanip
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 6
+        slots: []
+      - id: '16993224650170.5773416675418703'
+        definitionId: atomicNumber
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicNumber8
+          prop: version
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 60
+          filter: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 7
+        slots: []
+      - id: '16993224650170.044406694998450735'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime9
+          prop: firstaccess
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 8
+        slots: []
+      - id: '16993224650170.6235552815891809'
+        definitionId: atomicDateTime
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicDateTime10
+          prop: lastaccessvalid
+          primaryKey: false
+          timeFormat:
+            value: ''
+            dataValue: HH:mm
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 9
+        slots: []
+      - id: '16993224650170.27190528190908614'
+        definitionId: atomicSelect
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicSelect3
+          prop: status
+          primaryKey: false
+          options:
+            value:
+              - value: '1'
+                color: success
+                __UIBAKERY__SYSTEM_ID__: '16989125231290.2065659120677601'
+                title: Actived
+              - value: '2'
+                color: danger
+                __UIBAKERY__SYSTEM_ID__: '16993203027060.7286583003007612'
+                title: Banned
+              - value: '0'
+                color: warning
+                __UIBAKERY__SYSTEM_ID__: '16993203403550.8968339527909472'
+                title: Kicked
+            dataValue: |-
+              [
+                {
+                  value: 'Registed',
+                  color: 'primary'
+                }
+              ]
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          width: 120
+          filter: false
+          editable: true
+          withOptionsAutocomplete: true
+          allowResetValue:
+            value: false
+            dataValue: 'true'
+            withData: false
+          required: true
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
+          mappedValue: ''
+          mappedColor: ''
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 10
+        actions:
+          tagClick: []
+        slots: []
+      - id: '16993224650170.301838533681122'
+        definitionId: atomicBoolean
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicBoolean6
+          prop: HON
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+          editable: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 11
+        slots: []
+      - id: '16993224650170.0011821116313832647'
+        definitionId: atomicBoolean
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicBoolean7
+          prop: LOL_VN
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+          editable: true
+          trueText: '1'
+          falseText: '0'
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 12
+        slots: []
+      - id: '16993224650170.9702654242819697'
+        definitionId: atomicBoolean
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicBoolean8
+          prop: FO3_VN
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+          editable: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 13
+        slots: []
+      - id: '16993224650170.18586260179815906'
+        definitionId: atomicBoolean
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicBoolean9
+          prop: FO3_SG
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+          editable: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 14
+        slots: []
+      - id: '16993224650170.9847822698974851'
+        definitionId: atomicBoolean
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicBoolean10
+          prop: FO4_VN
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          filter: true
+          width: 60
+          editable: true
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 15
+        slots: []
+      - id: '16993224650170.1877013301514645'
+        definitionId: atomicContextMenuButton
+        styles: {}
+        properties:
+          name: atomicContextMenuButton2
+          text: '{{value}}'
+          contextMenuItems:
+            value:
+              - id: '0'
+                title: Kick PC
+                icon: chevron-right-outline
+                __UIBAKERY__SYSTEM_ID__: '1'
+              - id: '2'
+                title: Lock/Ban PC
+                icon: chevron-right-outline
+                __UIBAKERY__SYSTEM_ID__: '2'
+            dataValue: |-
+              [
+                {
+                  id: 'item_1',
+                  title: 'Item 1',
+                  icon: 'chevron-right-outline',
+                },
+                {
+                  id: 'item_2',
+                  title: 'Item 2',
+                  icon: 'chevron-right-outline',
+                },
+              ]
+            withData: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          appearance:
+            value: filled
+            dataValue: outline
+            withData: false
+            themeDefaultOverridePropertyKey: atomicSelectAppearance
+          prop: Action
+          primaryKey: false
+        parentSlotId: '16993224650170.19779267561052238'
+        index: 16
+        actions:
+          menuItemClick: []
+          buttonClick: []
+        slots: []

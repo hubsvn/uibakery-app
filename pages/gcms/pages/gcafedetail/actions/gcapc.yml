@@ -9,14 +9,13 @@ steps:
       - type: query
         value: >-
           SELECT
-          cafe_pc_tab.id,cafe_pc_tab.cafeid,cafe_pc_tab.machineid,pcname,volsn,sid,wanip,cafe_pc_tab.version,
+          cafe_pc_tab.id,cafe_pc_tab.cafeid,cafe_pc_tab.machineid,pcname,volsn,sid,wanip,cafe_pc_tab.version,pc_product_tab.baseid,cafe_pc_tab.valid
+          ,subscribed,
 
           from_unixtime(cafe_pc_tab.firstaccess) as
           firstaccess,from_unixtime(cafe_pc_tab.lastaccess)  
 
-          as
-          lastaccessvalid,IF(valid=1,"Registed",IF(valid=2,"Banned","UnRegisted"))
-          as "status",
+          as lastaccessvalid, valid as "status",
            max(case when baseid = '327691' then subscribed end)  "HON",
             max(case when baseid = '327871' then subscribed end)  "LOL_VN",
             max(case when baseid = '327941' then subscribed end) "FO3_VN",
@@ -44,14 +43,13 @@ steps:
       - type: preparedQuery
         value: >-
           SELECT
-          cafe_pc_tab.id,cafe_pc_tab.cafeid,cafe_pc_tab.machineid,pcname,volsn,sid,wanip,cafe_pc_tab.version,
+          cafe_pc_tab.id,cafe_pc_tab.cafeid,cafe_pc_tab.machineid,pcname,volsn,sid,wanip,cafe_pc_tab.version,pc_product_tab.baseid,cafe_pc_tab.valid
+          ,subscribed,
 
           from_unixtime(cafe_pc_tab.firstaccess) as
           firstaccess,from_unixtime(cafe_pc_tab.lastaccess)  
 
-          as
-          lastaccessvalid,IF(valid=1,"Registed",IF(valid=2,"Banned","UnRegisted"))
-          as "status",
+          as lastaccessvalid, valid as "status",
            max(case when baseid = '327691' then subscribed end)  "HON",
             max(case when baseid = '327871' then subscribed end)  "LOL_VN",
             max(case when baseid = '327941' then subscribed end) "FO3_VN",
@@ -95,9 +93,7 @@ steps:
     isChanged: true
 mode: manual
 modeConfigured: false
-parentPageId: '16989096265760.555943590473045'
 folder: false
-parentId: null
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.gcapc.name}}"?
@@ -114,4 +110,5 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 14
+parentPageId: '16989075112400.5943670874431344'
+index: 7
