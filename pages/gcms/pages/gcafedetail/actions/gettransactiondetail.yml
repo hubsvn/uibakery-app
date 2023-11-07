@@ -16,6 +16,7 @@ steps:
               purchase_type,
               IF(purchase_type =1,"Topup",IF(purchase_type =2,"+- Size","Refund")) as Type ,
               product_package_tab.name,
+              product_package_tab.product_type,
               purchase_time,
               auth_user.email,
               store_transaction_tab.current_status,
@@ -47,6 +48,7 @@ steps:
               purchase_type,
               IF(purchase_type =1,"Topup",IF(purchase_type =2,"+- Size","Refund")) as Type ,
               product_package_tab.name,
+              product_package_tab.product_type,
               purchase_time,
               auth_user.email,
               store_transaction_tab.current_status,
@@ -86,6 +88,23 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '16993215150080.27193487384199155'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '16993215486990.1856650249075653'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
 mode: manual
 modeConfigured: false
 parentPageId: '16989075112400.5943670874431344'
@@ -109,4 +128,4 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 11
+index: 9

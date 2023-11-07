@@ -18,3 +18,4 @@ slots:
     name: content
     children:
       - detail.yml
+      - getcurrentplanTable.yml

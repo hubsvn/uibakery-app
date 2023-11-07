@@ -26,6 +26,7 @@ steps:
                       CONCAT(
                           '{',
                           '\"Pkg Name\":\"', product_item_tab.name, '\",',
+                         '\"PkgID\":\"', product_item_tab.product_type, '\",',
                           '\"Exp\":\"', product_cafe_product_tab.end_date, '\",',
                           '\"Purchase date\":\"', product_cafe_product_tab.update_time, '\",',
                           '\"Start Date\":\"', product_cafe_product_tab.start_date, '\"',
@@ -86,6 +87,7 @@ steps:
                       CONCAT(
                           '{',
                           '\\"Pkg Name\\":\\"', product_item_tab.name, '\\",',
+                         '\\"PkgID\\":\\"', product_item_tab.product_type, '\\",',
                           '\\"Exp\\":\\"', product_cafe_product_tab.end_date, '\\",',
                           '\\"Purchase date\\":\\"', product_cafe_product_tab.update_time, '\\",',
                           '\\"Start Date\\":\\"', product_cafe_product_tab.start_date, '\\"',
@@ -143,6 +145,23 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+  - id: '16993214806780.35466268518411903'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '16993215622220.726899203234955'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
 mode: manual
 modeConfigured: false
 parentPageId: '16989075112400.5943670874431344'
@@ -164,4 +183,4 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: true
-index: 10
+index: 8

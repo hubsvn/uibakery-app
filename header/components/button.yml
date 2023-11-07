@@ -1,0 +1,50 @@
+id: '16993074351070.5077909643798644'
+definitionId: button
+parentSlotId: '16967488162300.8115645235877296'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 2
+      h: 10
+    iconPlacement: left
+  xs:
+    gridItem:
+      x: 0
+      y: 30
+      w: 24
+      h: 10
+properties:
+  name: button
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: Hubs VN
+  linkInfo:
+    active: internalPath
+    internalPath: '{{routes.dashboard.url}}'
+    externalPath: ''
+  appearance:
+    value: filled
+    dataValue: filled
+    withData: false
+  icon:
+    value: home-outline
+    dataValue: star-outline
+    withData: false
+  status:
+    value: primary
+    dataValue: primary
+    withData: false
+  showLoading:
+    value: false
+    dataValue: 'false'
+    withData: false
+  cssClasses:
+    - logo
+  __UIBAKERY__SHOW__CONDITION__PRESERVE__:
+    value: true
+    dataValue: 'false'
+    withData: false
+slots: []

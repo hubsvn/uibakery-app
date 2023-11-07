@@ -5,6 +5,18 @@ storeItemList:
     valueType: object
     initialValue: {}
     version: 1
+  - id: '16993215486990.1856650249075653'
+    name: selectedcafetransactrion
+    value: {}
+    valueType: object
+    initialValue: {}
+    version: 1
+  - id: '16993215622220.726899203234955'
+    name: selectedcafeinfo
+    value: {}
+    valueType: object
+    initialValue: {}
+    version: 1
 metadata:
   favicon: ''
   code: |-
@@ -13,6 +25,9 @@ metadata:
        width: 150px; !important;
        max-width: 250px; !important;
     }
+    .logo {
+    color: green;
+      }
     </style>
   title: Hubs VN App
   description: ''

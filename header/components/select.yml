@@ -4,7 +4,7 @@ parentSlotId: '16967488162300.8115645235877296'
 styles:
   xl:
     gridItem:
-      x: 21
+      x: 22
       y: 0
       w: 2
       h: 10
@@ -59,7 +59,7 @@ actions:
   init: []
   focusEvent: []
   blurEvent: []
-index: 0
+index: -1
 slots:
   - id: '16965808990310.23137410241608292'
     name: optionViewTypes

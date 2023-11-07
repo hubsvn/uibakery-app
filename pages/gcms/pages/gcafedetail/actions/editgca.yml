@@ -1,0 +1,143 @@
+id: '16993178149380.637421165709996'
+name: editgca
+nameConfigured: true
+steps:
+  - id: '16993178212580.502431008449927'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: |-
+          UPDATE pc_product_tab
+          SET subscribed = CASE baseid
+              WHEN '327691' THEN {{ui.gcapcTable.editedRow.data.HON ? 1 : 0}}
+              WHEN '327871' THEN {{ui.gcapcTable.editedRow.data.LOL_VN ? 1 : 0}}
+              WHEN '327941' THEN {{ui.gcapcTable.editedRow.data.FO3_VN ? 1 : 0}}
+              WHEN '327931' THEN {{ui.gcapcTable.editedRow.data.FO3_SG ? 1 : 0}}
+              WHEN '328371' THEN {{ui.gcapcTable.editedRow.data.FO4_VN ? 1 : 0}}
+              ELSE subscribed
+          END
+          WHERE machineid = {{ui.gcapcTable.editedRow.data.machineid}}
+          AND cafeid = {{ui.gcapcTable.editedRow.data.cafeid}}
+          AND baseid IN ('327691', '327871', '327941', '327931', '328371')
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: GCMS SING
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: |-
+          UPDATE pc_product_tab
+          SET subscribed = CASE baseid
+              WHEN '327691' THEN ?
+              WHEN '327871' THEN ?
+              WHEN '327941' THEN ?
+              WHEN '327931' THEN ?
+              WHEN '328371' THEN ?
+              ELSE subscribed
+          END
+          WHERE machineid = ?
+          AND cafeid = ?
+          AND baseid IN ('327691', '327871', '327941', '327931', '328371')
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.HON ? 1 :
+            0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.LOL_VN ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.FO3_VN ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.FO3_SG ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.FO4_VN ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.machineid)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.cafeid)
+        valueType: custom
+      - type: customDatabaseName
+        value: gca_db
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '16993234192420.9873736456804907'
+    type: customSQLQuery
+    name: query2
+    params:
+      - type: query
+        value: >-
+          update cafe_pc_tab set valid = {{ui.gcapcTable.editedRow.data.status}}
+          where id = {{ui.gcapcTable.editedRow.data.id}}
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: GCMS SING
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: update cafe_pc_tab set valid = ? where id = ?
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.status)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.id)
+        valueType: custom
+      - type: customDatabaseName
+        value: gca_db
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+folder: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.editgca.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.editgca.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.editgca.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentPageId: '16989075112400.5943670874431344'
+index: 6

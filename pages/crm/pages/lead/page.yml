@@ -1,26 +1,26 @@
-id: '16989096265760.555943590473045'
-name: PcDetail
-url: pcdetail
+id: '16993016547640.571891300665005'
+name: Lead
+url: lead
 roleIds: []
-disableInMenu: true
-parentPageId: '16989075112400.5943670874431344'
+disableInMenu: false
+parentPageId: '16993016404060.12119569705486599'
 index: 0
 slots:
-  - id: '16989096265760.39120380854008574'
+  - id: '16993016547640.9177980461575499'
     name: content
     children:
-      - id: '16989096265760.8373301032004576'
+      - id: '16993016547640.6359019117122389'
         definitionId: grid
-        parentSlotId: '16989096265760.39120380854008574'
+        parentSlotId: '16993016547640.9177980461575499'
         styles: {}
         properties:
-          name: pcdetail
+          name: lead
           pageTitle: '{{app.name}} - {{activeRoute.name}}'
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
         index: 0
         slots:
-          - id: '16989096265760.754438779233904'
+          - id: '16993016547640.574760267722995'
             name: content
             children: []
