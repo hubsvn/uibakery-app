@@ -19,7 +19,7 @@ styles:
       w: 24
       h: 10
 properties:
-  autoSyncItems: true
+  autoSyncItems: false
   name: horizontalMenu
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
@@ -31,28 +31,13 @@ properties:
         link: '/dashboard'
       },
       {
-        title: 'GCMS',
-        link: '/gcms',
-        children: [
-          {
-            title: 'GCafeDetail',
-            link: '/gcms/gcafedetail',
-            disabled: true,
-            children: [
-              {
-                title: 'PcDetail',
-                link: '/gcms/gcafedetail/pcdetail',
-                disabled: true
-              }
-            ]
-          }
-        ]
-      },
-      {
         title: 'CRM',
         link: '/crm',
-        disabled: true,
         children: [
+          {
+            title: 'GCMS',
+            link: '/crm/gcms',
+          },
           {
             title: 'Lead',
             link: '/crm/lead'
@@ -62,7 +47,6 @@ properties:
       {
         title: 'Marketing',
         link: '/marketing',
-        disabled: true,
         children: [
           {
             title: 'Page Builder',

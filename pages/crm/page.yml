@@ -2,9 +2,9 @@ id: '16993016404060.12119569705486599'
 name: CRM
 url: crm
 roleIds: []
-disableInMenu: true
+disableInMenu: false
 parentPageId: ''
-index: 2
+index: 1
 slots:
   - id: '16993016404060.035570459033026136'
     name: content
