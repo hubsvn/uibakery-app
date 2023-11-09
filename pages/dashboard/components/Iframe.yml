@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 0
+      y: 2
       w: 24
-      h: 380
+      h: 258
   xs:
     gridItem:
       x: 0
@@ -60,6 +60,10 @@ properties:
     dataValue: 'false'
     withData: false
   allowPayment:
+    value: true
+    dataValue: 'false'
+    withData: false
+  __UIBAKERY__SHOW__CONDITION__PRESERVE__:
     value: true
     dataValue: 'false'
     withData: false

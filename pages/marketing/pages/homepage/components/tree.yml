@@ -1,0 +1,22 @@
+id: '16993526818860.8821047774816337'
+definitionId: tree
+parentSlotId: '16993519984010.1854908291803552'
+styles:
+  xl:
+    gridItem:
+      x: 3
+      y: 257
+      w: 16
+      h: 60
+  xs:
+    gridItem:
+      x: 0
+      y: 140
+      w: 24
+      h: 60
+properties:
+  name: tree
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+slots: []

@@ -1,0 +1,26 @@
+id: '16994105043260.6109891884238006'
+name: Page Builder2
+url: builder2
+roleIds: []
+disableInMenu: false
+index: 3
+slots:
+  - id: '16994105043270.737625696001889'
+    name: content
+    children:
+      - id: '16994105043270.9369073879897332'
+        definitionId: grid
+        parentSlotId: '16994105043270.737625696001889'
+        styles: {}
+        properties:
+          name: mkt2
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '16994105043270.9139946377681905'
+            name: content
+            children:
+              - components/iframe2.yml
