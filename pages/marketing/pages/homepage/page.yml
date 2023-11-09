@@ -1,0 +1,29 @@
+id: '16993519984010.2844905913140521'
+name: HomePage
+url: homepage
+roleIds: []
+disableInMenu: false
+parentPageId: '16993067769220.8710402229212624'
+index: 2
+slots:
+  - id: '16993519984010.4413040002905304'
+    name: content
+    children:
+      - id: '16993519984010.9780889519349174'
+        definitionId: grid
+        parentSlotId: '16993519984010.4413040002905304'
+        styles: {}
+        properties:
+          name: homepage
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '16993519984010.1854908291803552'
+            name: content
+            children:
+              - components/jsonEditor.yml
+              - components/tree.yml
+              - components/textAnnotate.yml

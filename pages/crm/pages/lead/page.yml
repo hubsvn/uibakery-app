@@ -23,4 +23,10 @@ slots:
         slots:
           - id: '16993016547640.574760267722995'
             name: content
-            children: []
+            children:
+              - components/select3.yml
+              - components/district2.yml
+              - components/gettableTable2.yml
+              - components/button2.yml
+              - components/search2.yml
+              - components/modal2/modal2.yml

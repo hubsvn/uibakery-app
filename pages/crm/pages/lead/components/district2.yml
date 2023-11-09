@@ -1,18 +1,18 @@
-id: '16965808990310.3870808832630983'
+id: '16993549263970.12058129979210985'
 definitionId: selectWithAtomics
-parentSlotId: '16967488162300.8115645235877296'
+parentSlotId: '16993016547640.574760267722995'
 styles:
   xl:
     gridItem:
-      x: 20
+      x: 4
       y: 0
       w: 4
       h: 10
   xs:
     gridItem:
-      x: 21
-      y: 20
-      w: 1
+      x: 0
+      y: 10
+      w: 24
       h: 10
 properties:
   options:
@@ -23,19 +23,19 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: '{{actions.get_filter.data.country}}'
+    dataValue: '{{actions.get_district.data}}'
     withData: true
-  name: select
+  name: district2
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  optionValueKey: id
+  optionValueKey: districtid
   labelConfig:
     text: ''
-    position: vertical
+    position: horizontal
     align: left
-  value: '84'
-  withOptionsAutocomplete: false
+  value: '{{actions.get_district.data[0].districtid}}'
+  labelWidth: 0
   allowSelectAll:
     value: false
     dataValue: 'false'
@@ -48,30 +48,33 @@ properties:
     - fixed-width
 actions:
   selectChange:
-    - action: '16967421499530.2639369623895702'
+    - action: '16965844728010.15285773980174544'
       paramCode: ''
       blockPageLoad: false
       index: 0
-    - action: '16965808268620.012515630635093533'
+    - action: '16967066328950.6238582120995999'
       paramCode: ''
       blockPageLoad: false
       index: 1
   init: []
   focusEvent: []
   blurEvent: []
-index: -1
 slots:
-  - id: '16965808990310.23137410241608292'
+  - id: '16993549263970.12180985884405993'
     name: optionViewTypes
     children:
-      - id: '16965891861480.688109494827216'
+      - id: '16993549263970.036404639628109026'
         definitionId: atomicString
-        parentSlotId: '16965808990310.23137410241608292'
-        styles: {}
+        styles:
+          xl:
+            visible: true
         properties:
-          name: atomicJsonEditor
-          prop: countryname
+          name: atomicString8
+          prop: districtname
           primaryKey: false
-          mappedValue: '{{row.countryname}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        parentSlotId: '16993549263970.12180985884405993'
         index: 0
         slots: []

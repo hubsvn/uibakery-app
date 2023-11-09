@@ -1,0 +1,63 @@
+id: '16993549532380.2502806531653523'
+name: newAction
+nameConfigured: false
+steps:
+  - id: '16993549565570.5840697399638812'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: >-
+          select * from account_profile_tab where country_id =
+          {{ui.select.value}} LIMIT 25
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: GCMS SING
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: select * from account_profile_tab where country_id = ? LIMIT 25
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '16993016547640.571891300665005'
+folder: false
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.newAction.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.newAction.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.newAction.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+index: 15
