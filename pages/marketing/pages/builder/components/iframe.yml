@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 1
+      y: 0
       w: 24
-      h: 285
+      h: 478
   xs:
     gridItem:
       x: 0
@@ -19,7 +19,8 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  url: https://studio.grapesjs.com/
+  url: >-
+    https://apps.webstudio.is/builder/2bd58824-e0b3-44b5-96cd-899d9e28e795?authToken=baea423e-7d85-41d1-bf23-09f14216c9cc&mode=edit
   allowCamera:
     value: true
     dataValue: 'false'
