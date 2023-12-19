@@ -2,9 +2,9 @@ id: '16989117306620.7802929810288293'
 name: gcapc
 nameConfigured: true
 steps:
-  - id: '16989117343770.8817463176816847'
+  - id: '17027796438130.02303010614792167'
     type: customSQLQuery
-    name: query
+    name: query2
     params:
       - type: query
         value: >-
@@ -36,10 +36,6 @@ steps:
           GROUP BY cafe_pc_tab.cafeid,cafe_pc_tab.machineid
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: >-
           SELECT
@@ -88,12 +84,14 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
 mode: manual
 modeConfigured: false
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.gcapc.name}}"?
@@ -111,4 +109,5 @@ config:
 selected: true
 configured: true
 parentPageId: '16989075112400.5943670874431344'
+kind: workflow
 index: 7

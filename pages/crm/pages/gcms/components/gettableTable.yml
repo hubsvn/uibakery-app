@@ -69,7 +69,7 @@ properties:
     updateWhenFiltering: true
     themeDefaultOverridePropertyKey: smartTableTotalRowConfig
   serverSidePagination: false
-  limit: '20'
+  limit: '25'
   putEmptyValuesAtTheEnd: true
   rowVariation: normal
   showExportAction:
@@ -135,7 +135,10 @@ slots:
           markdownSupport: false
           pinColumn: left
           forceView: true
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
         parentSlotId: '16989074878660.8155849779081759'
         index: 0
         slots: []
@@ -219,7 +222,10 @@ slots:
             styles: []
           pinColumn: left
           showCopyButton: true
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
         parentSlotId: '16989074878660.8155849779081759'
         index: 4
         slots: []
@@ -245,7 +251,10 @@ slots:
           textStyle:
             transform: capitalize
           showCopyButton: false
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
         parentSlotId: '16989074878660.8155849779081759'
         index: 5
         slots: []
@@ -270,8 +279,11 @@ slots:
           pinColumn: left
           showCopyButton: true
           inputType: number
-          regexpPattern: (0[3|5|7|8|9])+([0-9]{8})\b
-          required: true
+          regexpPattern: /(0[3|5|7|8|9])+([0-9]{8})\b/gm
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
         parentSlotId: '16989074878660.8155849779081759'
         index: 6
         slots: []
@@ -302,9 +314,15 @@ slots:
           alignment: center
           title: Reg Size
           range:
-            min: 10
-            max: 200
-          required: true
+            value:
+              min: 10
+              max: 200
+            withData: false
+            dataValue: '[0, 10]'
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
           disabled:
             value: false
             dataValue: 'false'
@@ -409,7 +427,10 @@ slots:
           pinColumn: ''
           textStyle:
             transform: capitalize
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
         parentSlotId: '16989074878660.8155849779081759'
         index: 10
         slots: []
@@ -470,7 +491,10 @@ slots:
 
               return result
             withData: true
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
           title: District
           disabled:
             value: false
@@ -583,7 +607,10 @@ slots:
           filter: false
           pinColumn: ''
           forceView: true
-          required: false
+          required:
+            value: false
+            withData: false
+            dataValue: 'false'
           showCopyButton: true
           textStyle:
             transform: uppercase

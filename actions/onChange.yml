@@ -22,7 +22,6 @@ steps:
 singleStep: true
 mode: manual
 modeConfigured: true
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.onChange.name}}"?
@@ -38,4 +37,5 @@ config:
   runWhenFirstReferenced: true
   preserveStateOnPageChange: true
 assigned: true
+kind: workflow
 index: 4

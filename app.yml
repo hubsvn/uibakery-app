@@ -31,9 +31,11 @@ metadata:
     </style>
   title: Hubs VN App
   description: ''
+  breakpoints: []
 appSettings:
   properties:
     defaultData: '{}'
   actions: {}
   gridVersion: 2
+  density: default
 internalType: project

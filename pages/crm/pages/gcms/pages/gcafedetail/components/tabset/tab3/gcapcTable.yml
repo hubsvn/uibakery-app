@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 0
+      y: 2
       w: 24
       h: 345
   xs:
@@ -303,7 +303,10 @@ slots:
             value: false
             dataValue: 'true'
             withData: false
-          required: true
+          required:
+            value: true
+            withData: false
+            dataValue: 'false'
           appearance:
             value: filled
             dataValue: outline
@@ -351,6 +354,10 @@ slots:
           editable: true
           trueText: '1'
           falseText: '0'
+          disabled:
+            value: false
+            dataValue: 'false'
+            withData: true
         parentSlotId: '16993224650170.19779267561052238'
         index: 12
         slots: []

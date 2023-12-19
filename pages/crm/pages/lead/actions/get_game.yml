@@ -1,0 +1,62 @@
+id: '17027843852890.8357970533908159'
+kind: workflow
+name: get_game
+nameConfigured: true
+steps:
+  - id: '17027843883610.906291440828864'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: SELECT COUNT(-1),game FROM garena_member GROUP BY game
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: GarenaContact
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: SELECT COUNT(-1),game FROM garena_member GROUP BY game
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value: []
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '16993016547640.571891300665005'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_game.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_game.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_game.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+index: 14

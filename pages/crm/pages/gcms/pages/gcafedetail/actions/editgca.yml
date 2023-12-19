@@ -2,9 +2,9 @@ id: '16993178149380.637421165709996'
 name: editgca
 nameConfigured: true
 steps:
-  - id: '16993178212580.502431008449927'
+  - id: '17027796226430.19152530078565677'
     type: customSQLQuery
-    name: query
+    name: query3
     params:
       - type: query
         value: |-
@@ -22,10 +22,6 @@ steps:
           AND baseid IN ('327691', '327871', '327941', '327931', '328371')
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: |-
           UPDATE pc_product_tab
@@ -77,12 +73,15 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '16993234192420.9873736456804907'
+  - id: '17027796293110.4938495743047988'
     type: customSQLQuery
-    name: query2
+    name: query
     params:
       - type: query
         value: >-
@@ -90,10 +89,6 @@ steps:
           where id = {{ui.gcapcTable.editedRow.data.id}}
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: update cafe_pc_tab set valid = ? where id = ?
         valueType: interpolatedValue
@@ -117,12 +112,14 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
 mode: manual
 modeConfigured: false
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.editgca.name}}"?
@@ -140,4 +137,5 @@ config:
 selected: true
 configured: true
 parentPageId: '16989075112400.5943670874431344'
+kind: workflow
 index: 6

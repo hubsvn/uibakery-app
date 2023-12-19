@@ -29,7 +29,10 @@ properties:
     dataValue: MMM dd, yyyy
     withData: false
   value: ''
-  required: false
+  required:
+    value: false
+    withData: false
+    dataValue: 'false'
   minDate: ''
   timezone: ''
   cssClasses:

@@ -1,17 +1,17 @@
-id: '16993549263970.12058129979210985'
+id: '17027840801270.1669605985464251'
 definitionId: selectWithAtomics
 parentSlotId: '16993016547640.574760267722995'
 styles:
   xl:
     gridItem:
-      x: 4
+      x: 8
       y: 0
-      w: 4
+      w: 5
       h: 10
   xs:
     gridItem:
       x: 0
-      y: 10
+      y: 334
       w: 24
       h: 10
 properties:
@@ -23,18 +23,18 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: '{{actions.get_district.data}}'
+    dataValue: '{{actions.get_game.data}}'
     withData: true
-  name: district2
+  name: game
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  optionValueKey: districtid
+  optionValueKey: game
   labelConfig:
     text: ''
     position: horizontal
     align: left
-  value: '{{actions.get_district.data[0].districtid}}'
+  value: ''
   labelWidth: 0
   allowSelectAll:
     value: false
@@ -47,34 +47,26 @@ properties:
   cssClasses:
     - fixed-width
 actions:
-  selectChange:
-    - action: '16965844728010.15285773980174544'
-      paramCode: ''
-      blockPageLoad: false
-      index: 0
-    - action: '16967066328950.6238582120995999'
-      paramCode: ''
-      blockPageLoad: false
-      index: 1
+  selectChange: []
   init: []
   focusEvent: []
   blurEvent: []
 slots:
-  - id: '16993549263970.12180985884405993'
+  - id: '17027840801270.05366016704229093'
     name: optionViewTypes
     children:
-      - id: '16993549263970.036404639628109026'
+      - id: '17027840801270.3131934086003214'
         definitionId: atomicString
         styles:
           xl:
             visible: true
         properties:
-          name: atomicString8
-          prop: districtname
+          name: atomicString48
+          prop: game
           primaryKey: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-        parentSlotId: '16993549263970.12180985884405993'
+        parentSlotId: '17027840801270.05366016704229093'
         index: 0
         slots: []

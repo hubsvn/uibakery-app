@@ -1,27 +1,29 @@
-id: '16993549532380.2502806531653523'
+id: '17027900988440.062304260847361626'
+kind: workflow
 name: newAction
 nameConfigured: false
 steps:
-  - id: '16993549565570.5840697399638812'
+  - id: '17027929734700.14954474198748957'
     type: customSQLQuery
     name: query
     params:
       - type: query
-        value: >-
-          select * from account_profile_tab where country_id =
-          {{ui.select.value}} LIMIT 25
+        value: |-
+          SELECT trigger_event.*,flow_run.status FROM public.trigger_event
+          LEFT JOIN public.flow_run on flow_run.created = trigger_event.created
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS SING
+        value: My Data
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
-        value: select * from account_profile_tab where country_id = ? LIMIT 25
+        value: |-
+          SELECT trigger_event.*,flow_run.status FROM public.trigger_event
+          LEFT JOIN public.flow_run on flow_run.created = trigger_event.created
         valueType: interpolatedValue
       - type: preparedQueryParams
-        value:
-          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
+        value: []
         valueType: custom
       - type: customDatabaseName
         value: ''
@@ -43,8 +45,7 @@ steps:
     isChanged: true
 mode: manual
 modeConfigured: false
-parentPageId: '16993016547640.571891300665005'
-folder: false
+parentPageId: '17027900840740.42569153179403774'
 parentId: null
 config:
   shouldConfirm: false

@@ -2,9 +2,9 @@ id: '16989079080900.7398325760885769'
 name: getgcafedetail
 nameConfigured: true
 steps:
-  - id: '16989079109800.213019263233027'
+  - id: '17027796477370.4105540013576108'
     type: customSQLQuery
-    name: query
+    name: query2
     params:
       - type: query
         value: |
@@ -63,10 +63,6 @@ steps:
           ORDER by cafe_cafe_tab.id
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: |
           SELECT 
@@ -142,6 +138,9 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
@@ -165,7 +164,6 @@ steps:
 mode: manual
 modeConfigured: false
 parentPageId: '16989075112400.5943670874431344'
-folder: false
 parentId: null
 config:
   shouldConfirm: false
@@ -183,4 +181,5 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: true
+kind: workflow
 index: 8

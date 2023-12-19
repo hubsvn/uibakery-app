@@ -2,7 +2,7 @@ id: '16967066328950.6238582120995999'
 name: get_district
 nameConfigured: true
 steps:
-  - id: '16988922324950.028284899674130504'
+  - id: '17027795791920.040735549171130314'
     type: customSQLQuery
     name: get_region
     params:
@@ -30,15 +30,11 @@ steps:
           left join gcmsbase_region_tab on gcmsbase_region_tab.id = 
           gcmsbase_area_tab.region_id
 
-          where ( gcmsbase_area_tab.region_id = {{ui.select2.value ||
+          where ( gcmsbase_area_tab.region_id = {{ui.select_region.value ||
           activeRoute.queryParams.regionid}} and gcmsbase_area_tab.country_id =
           {{ui.select.value || activeRoute.queryParams.countryid}})
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: >
           SELECT 
@@ -69,7 +65,7 @@ steps:
       - type: preparedQueryParams
         value:
           - >-
-            __UI_BAKERY__FORMAT_IF_DATE__(ui.select2.value ||
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.select_region.value ||
             activeRoute.queryParams.regionid)
           - >-
             __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value ||
@@ -90,6 +86,9 @@ steps:
       - type: mapperEnabled
         value: true
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
@@ -97,7 +96,6 @@ steps:
 singleStep: false
 mode: auto
 modeConfigured: true
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.get_filter.name}}"?
@@ -115,4 +113,5 @@ config:
 assigned: true
 selected: true
 configured: true
+kind: workflow
 index: 2
