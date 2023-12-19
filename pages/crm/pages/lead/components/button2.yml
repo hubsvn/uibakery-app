@@ -22,9 +22,10 @@ properties:
   text: Search
 actions:
   buttonClick:
-    - action: '16965844728010.15285773980174544'
+    - action: '16993549532380.2502806531653523'
       paramCode: ''
       blockPageLoad: false
+      preventDefault: false
       index: 0
   init: []
 slots: []

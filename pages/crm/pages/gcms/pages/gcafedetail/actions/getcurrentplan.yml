@@ -2,9 +2,9 @@ id: '16989090143320.25715723548330227'
 name: getcurrentplan
 nameConfigured: true
 steps:
-  - id: '16989090303520.29599039705100294'
+  - id: '17027796580820.42653282055146136'
     type: customSQLQuery
-    name: query
+    name: query2
     params:
       - type: query
         value: >-
@@ -20,12 +20,11 @@ steps:
           LEFT JOIN product_item_tab ON product_item_tab.id =
           product_cafe_product_tab.item_id
 
-          WHERE cafe_id =  {{activeRoute.queryParams.cafeid}} and
-          product_cafe_product_tab.end_date > now()
+          WHERE cafe_id =  {{activeRoute.queryParams.cafeid}}
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
-        value: GCMS SING
+        value: GEMS SING
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
@@ -42,7 +41,7 @@ steps:
           LEFT JOIN product_item_tab ON product_item_tab.id =
           product_cafe_product_tab.item_id
 
-          WHERE cafe_id =  ? and product_cafe_product_tab.end_date > now()
+          WHERE cafe_id =  ?
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
@@ -69,7 +68,6 @@ steps:
 mode: manual
 modeConfigured: false
 parentPageId: '16989075112400.5943670874431344'
-folder: false
 parentId: null
 config:
   shouldConfirm: false
@@ -87,4 +85,5 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: false
+kind: workflow
 index: 10

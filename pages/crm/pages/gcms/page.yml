@@ -24,7 +24,7 @@ slots:
           - id: '16989074711510.5398923751737001'
             name: content
             children:
-              - components/select2.yml
+              - components/select_region.yml
               - components/district.yml
               - components/fromdate.yml
               - components/todate.yml
@@ -33,3 +33,4 @@ slots:
               - components/button4.yml
               - components/search.yml
               - components/modal3/modal3.yml
+              - components/select2.yml

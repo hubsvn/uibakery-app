@@ -1,18 +1,20 @@
-id: '16989074878660.35492484473761876'
+id: '17027805805490.14192387854272748'
 definitionId: selectWithAtomics
 parentSlotId: '16989074711510.5398923751737001'
 styles:
   xl:
     gridItem:
-      x: 0
+      id: '17027805805490.14192387854272748'
+      x: 8
       y: 0
       w: 4
       h: 10
   xs:
     gridItem:
-      x: 0
-      y: 0
-      w: 24
+      id: '17027805805490.14192387854272748'
+      x: 8
+      y: 344
+      w: 4
       h: 10
 properties:
   options:
@@ -23,54 +25,44 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: '{{actions.get_filter.data.region}}'
+    dataValue: |
+      [
+        {
+          title: 'Hết hạn',
+          value: '1',
+        },
+          {
+          title: 'Còn hạn',
+          value: '2',
+        },
+          {
+          title: 'Hạn trong tháng',
+          value: '3',
+        },
+        ]
     withData: true
   name: select2
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  optionValueKey: regionid
-  labelConfig:
-    text: ''
-    position: vertical
-    align: left
-  value: '{{actions.get_filter.data.region[0].regionid}}'
-  required: true
-  allowSelectAll:
-    value: false
-    dataValue: 'false'
-    withData: false
-  allowResetValue:
-    value: false
-    dataValue: 'false'
-    withData: false
-  cssClasses:
-    - fixed-width
-actions:
-  selectChange:
-    - action: '16967066328950.6238582120995999'
-      paramCode: ''
-      blockPageLoad: false
-      index: 0
-  init: []
-  focusEvent: []
-  blurEvent: []
+  optionValueKey: value
+actions: {}
 slots:
-  - id: '16989074878660.9229050429993959'
+  - id: '17027805805490.7608407929836798'
     name: optionViewTypes
     children:
-      - id: '16989074878660.9751444721578848'
+      - id: '17027807673200.3698245382203129'
         definitionId: atomicString
+        parentSlotId: '17027805805490.7608407929836798'
         styles:
           xl:
             visible: true
         properties:
-          name: atomicString9
-          prop: regionname
+          name: atomicString46
+          prop: title
           primaryKey: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-        parentSlotId: '16989074878660.9229050429993959'
         index: 0
         slots: []

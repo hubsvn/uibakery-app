@@ -12,6 +12,11 @@ styles:
       value: white
       dataValue: basic
       withData: false
+    logo:
+      url: ''
+      uploadUrl: ''
+      name: ''
+      active: url
   xs:
     gridItem:
       x: 0

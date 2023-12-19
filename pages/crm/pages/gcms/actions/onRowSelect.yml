@@ -22,7 +22,6 @@ steps:
 mode: manual
 modeConfigured: true
 parentPageId: '16989074711500.7344892973672945'
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.onRowSelect.name}}"?
@@ -37,4 +36,5 @@ config:
   delay: '0'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
-index: 14
+kind: workflow
+index: 11

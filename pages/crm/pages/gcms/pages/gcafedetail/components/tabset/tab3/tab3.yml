@@ -18,3 +18,4 @@ slots:
     name: content
     children:
       - gcapcTable.yml
+      - getcurrentplanTable2.yml

@@ -1,17 +1,17 @@
-id: '16989074878660.5482119231865843'
+id: '16993549263970.12058129979210985'
 definitionId: selectWithAtomics
-parentSlotId: '16989074711510.5398923751737001'
+parentSlotId: '16993016547640.574760267722995'
 styles:
   xl:
     gridItem:
-      x: 12
+      x: 0
       y: 0
-      w: 2
+      w: 5
       h: 10
   xs:
     gridItem:
       x: 0
-      y: 304
+      y: 10
       w: 24
       h: 10
 properties:
@@ -23,18 +23,19 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: '{{actions.exp_filter.data}}'
+    dataValue: '{{actions.get_city.data}}'
     withData: true
-  name: filter_exp
+  name: city
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  optionValueKey: value
+  optionValueKey: city
   labelConfig:
     text: ''
-    position: vertical
+    position: horizontal
     align: left
-  value: '{{actions.exp_filter.data[1].value}}'
+  value: ''
+  labelWidth: 0
   allowSelectAll:
     value: false
     dataValue: 'false'
@@ -46,30 +47,26 @@ properties:
   cssClasses:
     - fixed-width
 actions:
-  selectChange:
-    - action: '16965844728010.15285773980174544'
-      paramCode: ''
-      blockPageLoad: false
-      index: 0
+  selectChange: []
   init: []
   focusEvent: []
   blurEvent: []
 slots:
-  - id: '16989074878660.8437112945095808'
+  - id: '16993549263970.12180985884405993'
     name: optionViewTypes
     children:
-      - id: '17027805452020.9950140094801823'
+      - id: '16993549263970.036404639628109026'
         definitionId: atomicString
-        parentSlotId: '16989074878660.8437112945095808'
         styles:
           xl:
             visible: true
         properties:
-          name: atomicString35
-          prop: title
+          name: atomicString8
+          prop: city
           primaryKey: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
+        parentSlotId: '16993549263970.12180985884405993'
         index: 0
         slots: []

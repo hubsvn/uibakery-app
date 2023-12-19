@@ -2,7 +2,7 @@ id: '16965808268620.012515630635093533'
 name: get_filter
 nameConfigured: true
 steps:
-  - id: '16988922221520.020028490938500898'
+  - id: '17027795707020.9260675889398375'
     type: customSQLQuery
     name: get_country
     params:
@@ -10,10 +10,6 @@ steps:
         value: SELECT * FROM gcmsbase_country_tab;
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: SELECT * FROM gcmsbase_country_tab;
         valueType: interpolatedValue
@@ -35,11 +31,14 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
     nameConfigured: true
-  - id: '16988922537060.7941922159561161'
+  - id: '17027796095830.1964589902573628'
     type: customSQLQuery
     name: get_district_and_region
     params:
@@ -51,10 +50,6 @@ steps:
           where gcmsbase_region_tab.country_id = {{ui.select.value || 84}}
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: >-
           SELECT gcmsbase_region_tab.id as
@@ -84,6 +79,9 @@ steps:
       - type: mapperEnabled
         value: true
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
@@ -91,7 +89,6 @@ steps:
 singleStep: false
 mode: manual
 modeConfigured: false
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.get_filter.name}}"?
@@ -109,4 +106,5 @@ config:
 assigned: false
 selected: true
 configured: true
+kind: workflow
 index: 1

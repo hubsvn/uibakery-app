@@ -1,6 +1,6 @@
-id: '16993549263970.5370458211224718'
+id: '16989074878660.35492484473761876'
 definitionId: selectWithAtomics
-parentSlotId: '16993016547640.574760267722995'
+parentSlotId: '16989074711510.5398923751737001'
 styles:
   xl:
     gridItem:
@@ -25,7 +25,7 @@ properties:
         __UIBAKERY__SYSTEM_ID__: '2'
     dataValue: '{{actions.get_filter.data.region}}'
     withData: true
-  name: select3
+  name: select_region
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -35,7 +35,10 @@ properties:
     position: vertical
     align: left
   value: '{{actions.get_filter.data.region[0].regionid}}'
-  required: true
+  required:
+    value: true
+    withData: false
+    dataValue: 'false'
   allowSelectAll:
     value: false
     dataValue: 'false'
@@ -56,21 +59,21 @@ actions:
   focusEvent: []
   blurEvent: []
 slots:
-  - id: '16993549263970.19750374028535655'
+  - id: '16989074878660.9229050429993959'
     name: optionViewTypes
     children:
-      - id: '16993549263970.7631211547788104'
+      - id: '16989074878660.9751444721578848'
         definitionId: atomicString
         styles:
           xl:
             visible: true
         properties:
-          name: atomicString7
+          name: atomicString9
           prop: regionname
           primaryKey: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-        parentSlotId: '16993549263970.19750374028535655'
+        parentSlotId: '16989074878660.9229050429993959'
         index: 0
         slots: []

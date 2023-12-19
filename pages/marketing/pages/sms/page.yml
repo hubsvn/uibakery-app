@@ -1,0 +1,27 @@
+id: '17027900840740.42569153179403774'
+name: SMS
+url: sms
+roleIds: []
+disableInMenu: false
+parentPageId: '16993067769220.8710402229212624'
+index: 1
+slots:
+  - id: '17027900840740.9224456849895228'
+    name: content
+    children:
+      - id: '17027900840740.37755415972680995'
+        definitionId: grid
+        parentSlotId: '17027900840740.9224456849895228'
+        styles: {}
+        properties:
+          name: sms
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17027900840740.5498362473643341'
+            name: content
+            children:
+              - components/table2.yml

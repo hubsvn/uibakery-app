@@ -2,7 +2,7 @@ id: '16989086044350.3468126009656074'
 name: gettransactiondetail
 nameConfigured: true
 steps:
-  - id: '16989086091240.4846669101367589'
+  - id: '17027796530090.6166889779426146'
     type: customSQLQuery
     name: gettransactiondetail
     params:
@@ -34,10 +34,6 @@ steps:
               purchase_time desc
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: |
           SELECT 
@@ -84,6 +80,9 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
@@ -108,7 +107,6 @@ steps:
 mode: manual
 modeConfigured: false
 parentPageId: '16989075112400.5943670874431344'
-folder: false
 parentId: null
 config:
   shouldConfirm: false
@@ -128,4 +126,5 @@ config:
   preserveStateOnPageChange: false
 selected: true
 configured: true
+kind: workflow
 index: 9

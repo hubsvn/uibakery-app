@@ -2,6 +2,174 @@ id: '16965844728010.15285773980174544'
 name: gettable
 nameConfigured: true
 steps:
+  - id: '17027795989470.8467686126095124'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: |-
+          SELECT
+              cafe_cafe_tab.id,
+              cafe_cafe_tab.cafe_name,
+              cafe_cafe_tab.number_of_pc as Size,
+              authkey,
+              cafe_cafe_tab.currentstatus as status_code,
+              cafe_url,
+              cafe_phone,
+              contact_name,
+              contact_email,
+              contact_phone,
+              address,
+              product_item_tab.name as package,
+              product_cafe_product_tab.num_of_pc,
+              product_cafe_product_tab.update_time,
+              product_cafe_product_tab.start_date,
+               product_cafe_product_tab.end_date,
+              cafe_cafe_tab.district_id,
+              cafe_cafe_tab.area_id,
+              cafe_cafe_tab.region_id,    
+              gcmsbase_district_tab.districtname,
+              gcmsbase_region_tab.regionname,
+              gcmsbase_area_tab.areaname
+          FROM cafe_cafe_tab
+          LEFT JOIN gcmsbase_district_tab 
+              ON gcmsbase_district_tab.id = cafe_cafe_tab.district_id 
+          LEFT JOIN gcmsbase_area_tab 
+              ON gcmsbase_area_tab.id = cafe_cafe_tab.area_id
+          LEFT JOIN gcmsbase_region_tab 
+              ON gcmsbase_region_tab.id = cafe_cafe_tab.region_id
+          LEFT JOIN product_cafe_product_tab 
+              ON product_cafe_product_tab.cafe_id = cafe_cafe_tab.id 
+              AND product_cafe_product_tab.item_id = 4 
+          LEFT JOIN product_item_tab 
+              ON product_item_tab.id = product_cafe_product_tab.item_id
+          WHERE
+           (CASE 
+                      WHEN {{ui.search.value}} <> "" THEN CONCAT(cafe_cafe_tab.id,cafe_cafe_tab.cafe_name,authkey,contact_name,contact_email,contact_phone,address) like CONCAT('%', {{ui.search.value}}, '%')
+            ELSE 1 = 1 
+                  END)
+                AND  (CASE 
+                      WHEN {{ui.select_region.value}} != "" THEN  cafe_cafe_tab.region_id = {{ui.select_region.value}}
+                      ELSE 1 = 1 
+                  END)
+              AND  (CASE 
+                      WHEN {{ui.district.value}} != "" THEN  cafe_cafe_tab.district_id = {{ui.district.value}}
+                      ELSE 1 = 1 
+                  END)
+              AND (
+                  CASE
+                      WHEN {{ui.filter_exp.value.id}} = 'expired' THEN product_cafe_product_tab.end_date < {{ui.filter_exp.value.end_date}} 
+                      WHEN {{ui.filter_exp.value.id}} = 'not_expired' THEN product_cafe_product_tab.end_date >= {{ui.filter_exp.value.end_date}}
+                      WHEN {{ui.filter_exp.value.id}} = 'expired_to_this_month' THEN product_cafe_product_tab.end_date < {{ui.filter_exp.value.end_date}}  AND product_cafe_product_tab.end_date >= now()
+                      WHEN {{ui.filter_exp.value.id}} = 'expired_to_next_2_weeks' THEN product_cafe_product_tab.end_date >  NOW() AND product_cafe_product_tab.end_date < {{ui.filter_exp.value.end_date}}
+                  END
+              )
+              and cafe_cafe_tab.country_id = {{ui.select.value}}
+          ORDER by cafe_cafe_tab.id
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: |-
+          SELECT
+              cafe_cafe_tab.id,
+              cafe_cafe_tab.cafe_name,
+              cafe_cafe_tab.number_of_pc as Size,
+              authkey,
+              cafe_cafe_tab.currentstatus as status_code,
+              cafe_url,
+              cafe_phone,
+              contact_name,
+              contact_email,
+              contact_phone,
+              address,
+              product_item_tab.name as package,
+              product_cafe_product_tab.num_of_pc,
+              product_cafe_product_tab.update_time,
+              product_cafe_product_tab.start_date,
+               product_cafe_product_tab.end_date,
+              cafe_cafe_tab.district_id,
+              cafe_cafe_tab.area_id,
+              cafe_cafe_tab.region_id,    
+              gcmsbase_district_tab.districtname,
+              gcmsbase_region_tab.regionname,
+              gcmsbase_area_tab.areaname
+          FROM cafe_cafe_tab
+          LEFT JOIN gcmsbase_district_tab 
+              ON gcmsbase_district_tab.id = cafe_cafe_tab.district_id 
+          LEFT JOIN gcmsbase_area_tab 
+              ON gcmsbase_area_tab.id = cafe_cafe_tab.area_id
+          LEFT JOIN gcmsbase_region_tab 
+              ON gcmsbase_region_tab.id = cafe_cafe_tab.region_id
+          LEFT JOIN product_cafe_product_tab 
+              ON product_cafe_product_tab.cafe_id = cafe_cafe_tab.id 
+              AND product_cafe_product_tab.item_id = 4 
+          LEFT JOIN product_item_tab 
+              ON product_item_tab.id = product_cafe_product_tab.item_id
+          WHERE
+           (CASE 
+                      WHEN ? <> "" THEN CONCAT(cafe_cafe_tab.id,cafe_cafe_tab.cafe_name,authkey,contact_name,contact_email,contact_phone,address) like CONCAT('%', ?, '%')
+            ELSE 1 = 1 
+                  END)
+                AND  (CASE 
+                      WHEN ? != "" THEN  cafe_cafe_tab.region_id = ?
+                      ELSE 1 = 1 
+                  END)
+              AND  (CASE 
+                      WHEN ? != "" THEN  cafe_cafe_tab.district_id = ?
+                      ELSE 1 = 1 
+                  END)
+              AND (
+                  CASE
+                      WHEN ? = 'expired' THEN product_cafe_product_tab.end_date < ? 
+                      WHEN ? = 'not_expired' THEN product_cafe_product_tab.end_date >= ?
+                      WHEN ? = 'expired_to_this_month' THEN product_cafe_product_tab.end_date < ?  AND product_cafe_product_tab.end_date >= now()
+                      WHEN ? = 'expired_to_next_2_weeks' THEN product_cafe_product_tab.end_date >  NOW() AND product_cafe_product_tab.end_date < ?
+                  END
+              )
+              and cafe_cafe_tab.country_id = ?
+          ORDER by cafe_cafe_tab.id
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select_region.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select_region.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '16967081748580.8747111202461471'
     type: condition
     name: condition
@@ -18,133 +186,15 @@ steps:
       - type: steps
         value:
           - condition: true
-            steps:
-              - id: '16988922012330.7933421030212882'
-                type: customSQLQuery
-                name: query
-                params:
-                  - type: query
-                    value: |-
-                      SELECT 
-                          cafe_cafe_tab.id,
-                          cafe_cafe_tab.cafe_name,
-                          cafe_cafe_tab.number_of_pc as Size,
-                          authkey,
-                          cafe_cafe_tab.currentstatus as status_code,
-                          cafe_url,
-                          cafe_phone,
-                          contact_name,
-                          contact_email,
-                          contact_phone,
-                          address,
-                          product_item_tab.name as package,
-                          product_cafe_product_tab.num_of_pc,
-                          product_cafe_product_tab.end_date,
-                          product_cafe_product_tab.update_time,
-                          product_cafe_product_tab.start_date,
-                          cafe_cafe_tab.district_id,
-                          cafe_cafe_tab.area_id,
-                          cafe_cafe_tab.region_id,    
-                          gcmsbase_district_tab.districtname,
-                          gcmsbase_region_tab.regionname,
-                          gcmsbase_area_tab.areaname
-                      FROM cafe_cafe_tab
-                      LEFT JOIN gcmsbase_district_tab 
-                          ON gcmsbase_district_tab.id = cafe_cafe_tab.district_id 
-                      LEFT JOIN gcmsbase_area_tab 
-                          ON gcmsbase_area_tab.id = cafe_cafe_tab.area_id
-                      LEFT JOIN gcmsbase_region_tab 
-                          ON gcmsbase_region_tab.id = cafe_cafe_tab.region_id
-                      LEFT JOIN product_cafe_product_tab 
-                          ON product_cafe_product_tab.cafe_id = cafe_cafe_tab.id 
-                          AND product_cafe_product_tab.item_id = 4
-                      LEFT JOIN product_item_tab 
-                          ON product_item_tab.id = product_cafe_product_tab.item_id
-                      WHERE 
-                          ({{ui.search.value}} <> "" AND CONCAT(cafe_cafe_tab.id,cafe_cafe_tab.cafe_name,authkey,contact_name,contact_email,contact_phone,address) like CONCAT('%', {{ui.search.value}}, '%'))
-                          and cafe_cafe_tab.country_id = {{ui.select.value}}
-                      ORDER by cafe_cafe_tab.id
-                    valueType: interpolatedValue
-                    interpolationType: string
-                  - type: datasourceId
-                    value: GCMS SING
-                    valueType: custom
-                    mustSelectFirst: true
-                  - type: preparedQuery
-                    value: |-
-                      SELECT 
-                          cafe_cafe_tab.id,
-                          cafe_cafe_tab.cafe_name,
-                          cafe_cafe_tab.number_of_pc as Size,
-                          authkey,
-                          cafe_cafe_tab.currentstatus as status_code,
-                          cafe_url,
-                          cafe_phone,
-                          contact_name,
-                          contact_email,
-                          contact_phone,
-                          address,
-                          product_item_tab.name as package,
-                          product_cafe_product_tab.num_of_pc,
-                          product_cafe_product_tab.end_date,
-                          product_cafe_product_tab.update_time,
-                          product_cafe_product_tab.start_date,
-                          cafe_cafe_tab.district_id,
-                          cafe_cafe_tab.area_id,
-                          cafe_cafe_tab.region_id,    
-                          gcmsbase_district_tab.districtname,
-                          gcmsbase_region_tab.regionname,
-                          gcmsbase_area_tab.areaname
-                      FROM cafe_cafe_tab
-                      LEFT JOIN gcmsbase_district_tab 
-                          ON gcmsbase_district_tab.id = cafe_cafe_tab.district_id 
-                      LEFT JOIN gcmsbase_area_tab 
-                          ON gcmsbase_area_tab.id = cafe_cafe_tab.area_id
-                      LEFT JOIN gcmsbase_region_tab 
-                          ON gcmsbase_region_tab.id = cafe_cafe_tab.region_id
-                      LEFT JOIN product_cafe_product_tab 
-                          ON product_cafe_product_tab.cafe_id = cafe_cafe_tab.id 
-                          AND product_cafe_product_tab.item_id = 4
-                      LEFT JOIN product_item_tab 
-                          ON product_item_tab.id = product_cafe_product_tab.item_id
-                      WHERE 
-                          (? <> "" AND CONCAT(cafe_cafe_tab.id,cafe_cafe_tab.cafe_name,authkey,contact_name,contact_email,contact_phone,address) like CONCAT('%', ?, '%'))
-                          and cafe_cafe_tab.country_id = ?
-                      ORDER by cafe_cafe_tab.id
-                    valueType: interpolatedValue
-                  - type: preparedQueryParams
-                    value:
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
-                    valueType: custom
-                  - type: customDatabaseName
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: stepVersion
-                    value: 2
-                    valueType: custom
-                  - type: successMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: failureMapper
-                    value: ''
-                    valueType: interpolatedValue
-                  - type: mapperEnabled
-                    value: false
-                    valueType: custom
-                level: 1
-                fallthroughError: false
-                isChanged: true
-                nameConfigured: true
+            steps: []
           - condition: false
             steps:
-              - id: '16988922125450.9894826139115218'
+              - id: '17027796030510.33152894188567705'
                 type: customSQLQuery
                 name: query3
                 params:
                   - type: query
-                    value: |
+                    value: >-
                       SELECT 
                           cafe_cafe_tab.id,
                           cafe_cafe_tab.cafe_name,
@@ -169,6 +219,7 @@ steps:
                           gcmsbase_region_tab.regionname,
                           gcmsbase_area_tab.areaname
                       FROM cafe_cafe_tab
+
                       LEFT JOIN gcmsbase_district_tab 
                           ON gcmsbase_district_tab.id = cafe_cafe_tab.district_id 
                       LEFT JOIN gcmsbase_area_tab 
@@ -182,7 +233,7 @@ steps:
                           ON product_item_tab.id = product_cafe_product_tab.item_id
                       WHERE 
                           cafe_cafe_tab.country_id = {{ui.select.value}} 
-                          AND cafe_cafe_tab.region_id =  {{ui.select2.value}} 
+                          AND cafe_cafe_tab.region_id =  {{ui.select_region.value}} 
                           AND cafe_cafe_tab.district_id =  {{ui.district.value}} 
                           AND (
                               CASE
@@ -193,15 +244,18 @@ steps:
                               END
                           )
                          
-                      ORDER by cafe_cafe_tab.id;
+                      ORDER by cafe_cafe_tab.id
+
+                      LIMIT {{ui.gettableTable.pageSize}} OFFSET
+                      {{ui.gettableTable.paginationOffset}}
                     valueType: interpolatedValue
                     interpolationType: string
                   - type: datasourceId
-                    value: GCMS SING
+                    value: GEMS SING
                     valueType: custom
                     mustSelectFirst: true
                   - type: preparedQuery
-                    value: |
+                    value: |-
                       SELECT 
                           cafe_cafe_tab.id,
                           cafe_cafe_tab.cafe_name,
@@ -250,12 +304,13 @@ steps:
                               END
                           )
                          
-                      ORDER by cafe_cafe_tab.id;
+                      ORDER by cafe_cafe_tab.id
+                      LIMIT ? OFFSET ?
                     valueType: interpolatedValue
                   - type: preparedQueryParams
                     value:
                       - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
-                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.select2.value)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.select_region.value)
                       - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
                       - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
                       - >-
@@ -269,6 +324,9 @@ steps:
                       - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
                       - >-
                         __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.gettableTable.pageSize)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.gettableTable.paginationOffset)
                     valueType: custom
                   - type: customDatabaseName
                     value: ''
@@ -289,14 +347,15 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
+                paused: true
         valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
+    paused: true
 singleStep: false
 mode: auto
 modeConfigured: true
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.gettable.name}}"?
@@ -314,4 +373,5 @@ config:
 assigned: true
 selected: true
 configured: true
+kind: workflow
 index: 0

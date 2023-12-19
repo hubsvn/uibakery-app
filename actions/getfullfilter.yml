@@ -2,9 +2,9 @@ id: '16967416485710.4506181472266171'
 name: getfullfilter
 nameConfigured: true
 steps:
-  - id: '16988922662600.1966511955094068'
+  - id: '17027795845620.35028296388682967'
     type: customSQLQuery
-    name: query
+    name: query2
     params:
       - type: query
         value: >-
@@ -41,10 +41,6 @@ steps:
           activeRoute.queryParams.regionid}} 
         valueType: interpolatedValue
         interpolationType: string
-      - type: datasourceId
-        value: GCMS SING
-        valueType: custom
-        mustSelectFirst: true
       - type: preparedQuery
         value: >-
           SELECT 
@@ -99,13 +95,15 @@ steps:
       - type: mapperEnabled
         value: false
         valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
     level: 1
     fallthroughError: false
     isChanged: true
 singleStep: false
 mode: manual
 modeConfigured: false
-folder: false
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.getfullfilter.name}}"?
@@ -123,4 +121,5 @@ config:
 assigned: false
 selected: true
 configured: true
+kind: workflow
 index: 3
