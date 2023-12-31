@@ -1,0 +1,63 @@
+id: '16967416485710.4506181472266171'
+name: getfullfilter
+nameConfigured: true
+steps:
+  - id: '17027795845620.35028296388682967'
+    type: customSQLQuery
+    name: query2
+    params:
+      - type: query
+        value: ./query2-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: preparedQuery
+        value: ./query2-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(state.filterdata.country_id ||
+            activeRoute.queryParams.regionid)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+singleStep: false
+mode: manual
+modeConfigured: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.getfullfilter.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.getfullfilter.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.getfullfilter.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+assigned: false
+selected: true
+configured: true
+kind: workflow

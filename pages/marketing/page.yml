@@ -4,7 +4,6 @@ url: marketing
 roleIds: []
 disableInMenu: false
 parentPageId: ''
-index: 2
 slots:
   - id: '16993067769220.6089337882755173'
     name: content

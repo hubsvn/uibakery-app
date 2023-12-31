@@ -4,7 +4,6 @@ url: dashboard
 roleIds: []
 disableInMenu: false
 parentPageId: ''
-index: 0
 slots:
   - id: '16989056406330.617778874482048'
     name: content

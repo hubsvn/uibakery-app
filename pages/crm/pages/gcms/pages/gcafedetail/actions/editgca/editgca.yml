@@ -1,0 +1,114 @@
+id: '16993178149380.637421165709996'
+name: editgca
+nameConfigured: true
+steps:
+  - id: '17027796226430.19152530078565677'
+    type: customSQLQuery
+    name: query3
+    params:
+      - type: query
+        value: ./query3-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: preparedQuery
+        value: ./query3-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.HON ? 1 :
+            0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.LOL_VN ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.FO3_VN ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.FO3_SG ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.FO4_VN ?
+            1 : 0)
+          - >-
+            __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.machineid)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.cafeid)
+        valueType: custom
+      - type: customDatabaseName
+        value: gca_db
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17027796293110.4938495743047988'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: ./query-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: preparedQuery
+        value: ./query-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.status)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.gcapcTable.editedRow.data.id)
+        valueType: custom
+      - type: customDatabaseName
+        value: gca_db
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.editgca.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.editgca.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.editgca.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentPageId: '16989075112400.5943670874431344'
+kind: workflow

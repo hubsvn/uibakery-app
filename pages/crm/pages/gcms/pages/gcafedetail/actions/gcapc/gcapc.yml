@@ -1,0 +1,60 @@
+id: '16989117306620.7802929810288293'
+name: gcapc
+nameConfigured: true
+steps:
+  - id: '17027796438130.02303010614792167'
+    type: customSQLQuery
+    name: query2
+    params:
+      - type: query
+        value: ./query2-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: preparedQuery
+        value: ./query2-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(activeRoute.queryParams.cafeid)
+        valueType: custom
+      - type: customDatabaseName
+        value: gca_db
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.gcapc.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.gcapc.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.gcapc.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
+parentPageId: '16989075112400.5943670874431344'
+kind: workflow
