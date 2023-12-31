@@ -4,7 +4,6 @@ url: sms
 roleIds: []
 disableInMenu: false
 parentPageId: '16993067769220.8710402229212624'
-index: 1
 slots:
   - id: '17027900840740.9224456849895228'
     name: content

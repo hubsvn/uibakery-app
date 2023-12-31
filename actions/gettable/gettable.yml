@@ -1,0 +1,152 @@
+id: '16965844728010.15285773980174544'
+name: gettable
+nameConfigured: true
+steps:
+  - id: '17027795989470.8467686126095124'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: ./query-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: GEMS SING
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: ./query-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.search.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select_region.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select_region.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 1
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '16967081748580.8747111202461471'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps: []
+          - condition: false
+            steps:
+              - id: '17027796030510.33152894188567705'
+                type: customSQLQuery
+                name: query3
+                params:
+                  - type: query
+                    value: ./query3-query.sql
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: datasourceId
+                    value: GEMS SING
+                    valueType: custom
+                    mustSelectFirst: true
+                  - type: preparedQuery
+                    value: ./query3-preparedQuery.sql
+                    valueType: interpolatedValue
+                  - type: preparedQueryParams
+                    value:
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.select.value)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.select_region.value)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.district.value)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.id)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.filter_exp.value.end_date)
+                      - __UI_BAKERY__FORMAT_IF_DATE__(ui.gettableTable.pageSize)
+                      - >-
+                        __UI_BAKERY__FORMAT_IF_DATE__(ui.gettableTable.paginationOffset)
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: stepVersion
+                    value: 2
+                    valueType: custom
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+                paused: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: true
+singleStep: false
+mode: auto
+modeConfigured: true
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.gettable.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.gettable.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.gettable.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: false
+  preserveStateOnPageChange: true
+assigned: true
+selected: true
+configured: true
+kind: workflow

@@ -4,7 +4,6 @@ url: pcdetail
 roleIds: []
 disableInMenu: true
 parentPageId: '16989075112400.5943670874431344'
-index: 0
 slots:
   - id: '16989096265760.39120380854008574'
     name: content

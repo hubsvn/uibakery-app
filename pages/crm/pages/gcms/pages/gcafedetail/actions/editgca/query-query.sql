@@ -1,0 +1,1 @@
+update cafe_pc_tab set valid = {{ui.gcapcTable.editedRow.data.status}} where id = {{ui.gcapcTable.editedRow.data.id}}

@@ -1,0 +1,1 @@
+SELECT COUNT(-1),game FROM garena_member GROUP BY game

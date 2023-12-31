@@ -4,7 +4,6 @@ url: gcafedetail
 roleIds: []
 disableInMenu: true
 parentPageId: '16989074711500.7344892973672945'
-index: 0
 slots:
   - id: '16989075112400.24175869156631236'
     name: content

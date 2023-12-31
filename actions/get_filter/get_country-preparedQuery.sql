@@ -1,0 +1,1 @@
+SELECT * FROM gcmsbase_country_tab;
