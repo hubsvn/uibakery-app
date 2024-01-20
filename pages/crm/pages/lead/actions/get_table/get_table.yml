@@ -19,8 +19,6 @@ steps:
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
-          - __UI_BAKERY__FORMAT_IF_DATE__(ui.search2.value)
-          - __UI_BAKERY__FORMAT_IF_DATE__(ui.search2.value)
           - __UI_BAKERY__FORMAT_IF_DATE__(ui.city.value)
           - __UI_BAKERY__FORMAT_IF_DATE__(ui.city.value)
           - __UI_BAKERY__FORMAT_IF_DATE__(ui.game.value)
