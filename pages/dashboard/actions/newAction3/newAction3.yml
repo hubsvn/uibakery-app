@@ -1,0 +1,41 @@
+id: '17044369823570.6939738781188314'
+kind: workflow
+name: newAction3
+nameConfigured: false
+steps:
+  - id: '17044369861590.4715945224268525'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17044384198530.20597425733454044'
+    type: draft
+    name: newStep
+    params: []
+    level: 0
+    fallthroughError: false
+    isChanged: false
+mode: manual
+modeConfigured: false
+parentPageId: '16989056406330.9105003011061585'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.newAction3.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.newAction3.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.newAction3.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
